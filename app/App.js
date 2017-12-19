@@ -15,10 +15,11 @@ const App = ()=>{
   return(
       <div className="container">
         <div style={{position:'fixed',display:'flex',flexDirection:'column',bottom:0,right:0}}>
-          <Link to="DiskRead">DiskRead</Link>
-          <Link to="NewsInformation">NewsInformation</Link>
-          <Link to="TeacherReport">TeacherReport</Link>
-          <Link to="User">User</Link>
+          <Link to="/Main">Main</Link>
+          <Link to="/DiskRead">DiskRead</Link>
+          <Link to="/NewsInformation">NewsInformation</Link>
+          <Link to="/TeacherReport">TeacherReport</Link>
+          <Link to="/User">User</Link>
         </div>
         <Route exact path="/" render={()=>(<Redirect to="/Main"/>)}/>
         <Route path="/Main" component={Main}/>

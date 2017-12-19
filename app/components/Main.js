@@ -5,6 +5,11 @@ import fetchJsonp from 'fetch-jsonp'
 export default class Main extends React.Component{
   constructor(props){
     super(props)
+    this.state={
+      hq_str_s_sh000001:'',
+      hq_str_s_sz399001:'',
+      hq_str_s_sz399006:''
+    }
   }
 
   componentDidMount(){
@@ -24,7 +29,6 @@ export default class Main extends React.Component{
     script.src="http://hq.sinajs.cn/list=s_sh000001,s_sz399001,s_sz399006"
     script.id='getDate'
   }
-
   removeScript(){
     let body = document.body
     let script = document.getElementById('getDate')
@@ -38,8 +42,7 @@ export default class Main extends React.Component{
 
         <div>
           <div>
-            <button onClick={this.updateDates.bind(this)}>add</button>
-            <button onClick={this.removeScript.bind(this)}>remove</button>
+            Main
           </div>
         </div>
     )
