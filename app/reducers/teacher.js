@@ -15,7 +15,7 @@ export default function disk(state = initialState, action) {
       }
     case actionTypes.TEACHER_RECEIVED:
       return {
-        data:action.data,
+        data:state.data.concat(action.data),
         receivedAt:action.receivedAt,
         isFetching:false
       }

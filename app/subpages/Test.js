@@ -1,8 +1,8 @@
 import React from 'react'
 
-import {news_infomation} from '../constants/urls'
+import {disk_read} from '../constants/urls'
 import {hex_md5} from '../static/js/md5-min'
-import fetchJsonp from 'fetch-jsonp'
+import moment from 'moment'
 
 export default class Test extends React.Component{
   constructor(props){
@@ -12,7 +12,7 @@ export default class Test extends React.Component{
   componentDidMount(){
     let myHeaders = new Headers()
     myHeaders.append('Content-Type', ' application/x-www-form-urlencoded')
-    let now_stamp = Math.ceil(new Date().getTime()/1000)
+    let now_stamp = moment().format('X')
     let _key='jgjy'+now_stamp
     let key = hex_md5(_key)
     let limit=10
@@ -24,10 +24,19 @@ export default class Test extends React.Component{
       query_start_stamp:0,
       query_end_stamp:now_stamp
     }
-    let url = news_infomation+`?now_stamp=${data.now_stamp}&key=${data.key}&id=581958`
 
-    fetchJsonp(url)
-        .then(res=>res.json())
+    let request = new Request(disk_read, {
+      method: 'POST',
+      mode: 'no-cors',
+      credentials: 'include',
+      body: `now_stamp=${data.now_stamp}&key=${data.key}&limit=${data.limit}&query_start_stamp=${data.query_start_stamp}&query_end_stamp=${data.query_end_stamp}`,
+      headers: myHeaders
+    })
+    fetch(request)
+        .then(res => {
+          console.log(res)
+          return res.json()
+        })
         .then(json=>{
           console.log(json)
         })

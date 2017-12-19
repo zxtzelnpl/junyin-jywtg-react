@@ -6,26 +6,27 @@ import NewsInformationDetail from './containers/NewsInformationDetail'
 import TeacherReport from './containers/TeacherReport'
 import TeacherReportDetail from './containers/TeacherReportDetail'
 import User from './containers/User'
+import Main from './components/Main'
+// import Test from './subpages/Test'
 
 import './static/css/app.less'
 
 const App = ()=>{
   return(
       <div className="container">
-        <div style={{position:'fixed',display:'flex',flexDirection:'column',bottom:0}}>
+        <div style={{position:'fixed',display:'flex',flexDirection:'column',bottom:0,right:0}}>
           <Link to="DiskRead">DiskRead</Link>
           <Link to="NewsInformation">NewsInformation</Link>
-          <Link to="NewsInformationDetail">NewsInformationDetail</Link>
           <Link to="TeacherReport">TeacherReport</Link>
-          <Link to="TeacherReportDetail">TeacherReportDetail</Link>
           <Link to="User">User</Link>
         </div>
-        <Route exact path="/" render={()=>(<Redirect to="/DiskRead"/>)}/>
+        <Route exact path="/" render={()=>(<Redirect to="/Main"/>)}/>
+        <Route path="/Main" component={Main}/>
         <Route path="/DiskRead" component={DiskRead}/>
         <Route path="/NewsInformation" component={NewsInformation}/>
-        <Route path="/NewsInformationDetail" component={NewsInformationDetail}/>
+        <Route path="/NewsInformationDetail/:id" component={NewsInformationDetail}/>
         <Route path="/TeacherReport" component={TeacherReport}/>
-        <Route path="/TeacherReportDetail" component={TeacherReportDetail}/>
+        <Route path="/TeacherReportDetail/:id" component={TeacherReportDetail}/>
         <Route path="/User" component={User}/>
       </div>
   )
