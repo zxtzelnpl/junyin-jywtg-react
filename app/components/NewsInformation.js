@@ -1,7 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import moment from 'moment'
-import {getTimeStamp} from '../static/js/tools'
 import './NewsInformation.less'
 
 const NewsItem = ({ID, Title, UEditTime}) => {
@@ -24,7 +23,7 @@ export default class NewsInformation extends React.Component {
       let value = {
         limit: 10,
         query_start_stamp: 0,
-        query_end_stamp: getTimeStamp()
+        query_end_stamp: moment().format('X')
       }
       this.props.newsActions.fetchPostsIfNeeded(value)
     }
@@ -36,7 +35,7 @@ export default class NewsInformation extends React.Component {
     if(len>0){
       let last = datas[len-1]
       let query_start_stamp = 0;
-      let query_end_stamp = getTimeStamp(last.UEditTime)
+      let query_end_stamp = moment(last.UEditTime).format('X')
 
       let value = {
         limit:10,

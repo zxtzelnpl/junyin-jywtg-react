@@ -3,7 +3,7 @@ import {news_infomation} from '../constants/urls'
 import {hex_md5} from '../static/js/md5-min'
 import {apiKey} from "../../config/keys";
 import fetchJsonp from 'fetch-jsonp'
-import {getTimeStamp} from '../static/js/tools'
+import moment from 'moment'
 
 const requestPosts = () => ({
   type: actionTypes.NEWS_REQUEST_JSONP
@@ -11,14 +11,14 @@ const requestPosts = () => ({
 
 const received = (data) =>({
   type: actionTypes.NEWS_RECEIVED,
-  receivedAt:getTimeStamp(),
+  receivedAt:moment().format('X'),
   data
 })
 
 const fetchPosts = value => dispatch => {
   dispatch(requestPosts())
   let {limit,query_start_stamp,query_end_stamp} = value
-  let now_stamp = getTimeStamp()
+  let now_stamp = moment().format('X')
   let key = hex_md5(apiKey+now_stamp)
   let url = `${news_infomation}?now_stamp=${now_stamp}&key=${key}&limit=${limit}&query_start_stamp=${query_start_stamp}&query_end_stamp=${query_end_stamp}`
 

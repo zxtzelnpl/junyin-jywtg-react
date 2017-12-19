@@ -1,5 +1,5 @@
 import React from 'react'
-import {getTimeStamp} from '../static/js/tools'
+import moment from 'moment'
 export default class TeacherReport extends React.Component{
   constructor(props){
     super(props)
@@ -10,7 +10,7 @@ export default class TeacherReport extends React.Component{
       let value = {
         limit:10,
         query_start_stamp:0,
-        query_end_stamp:getTimeStamp()
+        query_end_stamp:moment().format('X')
       }
       this.props.teacherActions.fetchPostsIfNeeded(value)
     }

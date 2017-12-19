@@ -1,7 +1,7 @@
 import * as actionTypes from '../constants/user'
 import {user_check} from '../constants/urls'
 import fetchJsonp from "fetch-jsonp";
-import {getTimeStamp} from "../static/js/tools";
+import moment from 'moment'
 
 const requestPosts = () => ({
   type: actionTypes.USERCHECK_REQUEST_POST
@@ -9,7 +9,7 @@ const requestPosts = () => ({
 
 const received = (data) =>({
   type: actionTypes.USERCHECK_RECEIVED,
-  receivedAt:getTimeStamp(),
+  receivedAt:moment().format('X'),
   data
 })
 
