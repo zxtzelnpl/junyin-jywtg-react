@@ -1,31 +1,36 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 import moment from 'moment'
 import './NewsInformation.less'
-
-const NewsItem = ({ID, Title, UEditTime}) => {
-  let url = `/NewsInformationDetail/${ID}`
-  return (
-      <Link to={url} className="newsItem">
-        <span>{Title}</span>
-        <span>{moment(UEditTime).format('YYYY-MM-DD hh:mm')}</span>
-      </Link>
-  )
-}
+import NewsItem from './NewsInformationItem'
+import {public_resource} from "../constants/urls";
 
 export default class NewsInformation extends React.Component {
   constructor(props) {
     super(props)
+    this.checkLoading=this.checkLoading.bind(this)
   }
 
   componentDidMount() {
-    if (this.props.news.data.length < 10) {
+    document.addEventListener('scroll',this.checkLoading)
+    if (this.props.news.data.length < 20) {
       let value = {
-        limit: 10,
+        limit: 20,
         query_start_stamp: 0,
         query_end_stamp: moment().format('X')
       }
       this.props.newsActions.fetchPostsIfNeeded(value)
+    }
+  }
+
+  componentWillUnmount(){
+    document.removeEventListener('scroll',this.checkLoading)
+  }
+
+  checkLoading(){
+    let bottom_distance = parseInt(getComputedStyle(this.wrap).paddingBottom)
+    let top = this.loading.getBoundingClientRect().top
+    if(bottom_distance+top<window.innerHeight){
+      this.add()
     }
   }
 
@@ -50,6 +55,8 @@ export default class NewsInformation extends React.Component {
 
   render() {
     let data = this.props.news.data
+    let news_img = `${public_resource}/news.jpg`
+    let loading_img = `${public_resource}/loading.png`
     let htmlDom = (
         <div/>
     )
@@ -60,10 +67,16 @@ export default class NewsInformation extends React.Component {
     }
 
     return (
-        <div className="newsInformation">
-          NewsInformation
-          {htmlDom}
-          <button onClick={this.add.bind(this)}>Add</button>
+        <div className="newsInformation" ref={wrap=>{this.wrap=wrap}}>
+          <p className="title">
+            <span><img src={news_img} />机构资讯</span>
+          </p>
+          <div>
+            {htmlDom}
+          </div>
+          <div className="loading" ref={loading=>{this.loading=loading}}>
+            <img src={loading_img} />
+          </div>
         </div>
     )
   }

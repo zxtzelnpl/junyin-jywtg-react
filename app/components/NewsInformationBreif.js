@@ -11,9 +11,9 @@ export default class NewsInformation extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.news.data.length < 10) {
+    if (this.props.news.data.length < 20) {
       let value = {
-        limit: 10,
+        limit: 20,
         query_start_stamp: 0,
         query_end_stamp: moment().format('X')
       }

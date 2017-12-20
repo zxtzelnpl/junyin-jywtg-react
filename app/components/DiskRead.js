@@ -32,7 +32,6 @@ export default class DiskRead extends React.Component {
     if(bottom_distance+top<window.innerHeight){
       this.add()
     }
-
   }
 
   add() {
