@@ -30,8 +30,9 @@ export default class Login extends React.Component{
   onSub(){
     let {phone,secret} = this.state
     if(!phoneCheck(phone)){
-      alert('手机格式有错误')
+      return alert('手机格式有错误')
     }
+    this.props.userActions.fetchPostsIfNeeded(this.state)
   }
 
 

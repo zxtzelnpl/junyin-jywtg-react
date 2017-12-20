@@ -66,27 +66,12 @@ module.exports = {
 
   devServer: {
     proxy: {
-      '/Disk_read': {
-        target: 'http://121.43.59.180:9000',
+      '/ashx': {
+        target: 'http://106.14.21.199:8013',
         secure: false
       }
     },
     contentBase: './build',//本地服务器所加载的页面所在的目录
-    // historyApiFallback: {
-    //   rewrites: [
-    //     // shows views/landing.html as the landing page
-    //     {from: /^\/$/, to: '/front.html'},
-    //     {from: /^\/billadd$/, to: '/front.html'},
-    //     {from: /^\/billset$/, to: '/front.html'},
-    //     {from: /^\/billdetails$/, to: '/front.html'},
-    //     // shows views/subpage.html for all routes starting with /subpage
-    //     {from: /^\/user/, to: '/admin.html'},
-    //     {from: /^\/bill/, to: '/admin.html'},
-    //     {from: /^\/admin/, to: '/admin.html'},
-    //     // shows views/404.html on all other pages
-    //
-    //   ]
-    // },//不跳转
     inline: true,//实时刷新
     hot: true//使用热加载插件 HotModuleReplacementPlugin
   }

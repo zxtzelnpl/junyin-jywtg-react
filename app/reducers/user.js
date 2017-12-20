@@ -18,6 +18,11 @@ export default function disk(state = initialState, action) {
         receivedAt:action.receivedAt,
         isFetching:false
       }
+    case actionTypes.USERCHECK_ERROR:
+      return {
+        ...state,
+        isFetching:false
+      }
     default:
       return state
   }
