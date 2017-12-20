@@ -1,4 +1,6 @@
 import React from 'react'
+import moment from "moment/moment";
+import './TeacherReportDetail.less'
 export default class TeacherReportDetail extends React.Component{
   constructor(props){
     super(props)
@@ -24,8 +26,9 @@ export default class TeacherReportDetail extends React.Component{
       let {content,id,title,timestamp} = teacherItem
       htmlDom= (
           <div>
-            <div className="title">{title}</div>
-            <div dangerouslySetInnerHTML={{__html:content}} />
+            <div className="detail_title">{title}</div>
+            <div className="detail_time">{moment.unix(timestamp).format('YYYY-MM-DD hh:mm')}</div>
+            <div className="detail_content" dangerouslySetInnerHTML={{__html:content}} />
           </div>
       )
     }
@@ -35,7 +38,7 @@ export default class TeacherReportDetail extends React.Component{
       )
     }
     return (
-        <div>
+        <div className="teacherReportDetail">
           {htmlDom}
         </div>
     )

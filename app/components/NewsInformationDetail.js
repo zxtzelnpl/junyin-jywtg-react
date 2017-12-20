@@ -1,4 +1,6 @@
 import React from 'react'
+import moment from 'moment'
+import './NewsInformationDetail.less'
 export default class NewsInformationDetail extends React.Component{
   constructor(props){
     super(props)
@@ -21,11 +23,12 @@ export default class NewsInformationDetail extends React.Component{
     let htmlDom
     if(this.newsItem.length>0){
       let newsItem = this.newsItem[0]
-      let {Content,ID,Title,UEditTime} = newsItem
+      let {Content,Title,UEditTime} = newsItem
       htmlDom= (
           <div>
-            <div className="title">{Title}</div>
-            <div dangerouslySetInnerHTML={{__html:Content}} />
+            <div className="detail_title">{Title}</div>
+            <div className="detail_time">{moment(UEditTime).format('YYYY-MM-DD hh:mm')}</div>
+            <div className="detail_content" dangerouslySetInnerHTML={{__html:Content}} />
           </div>
       )
     }
