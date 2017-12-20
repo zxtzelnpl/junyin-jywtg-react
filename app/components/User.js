@@ -45,8 +45,8 @@ export default class User extends React.Component {
               <img className="selection_detail" src={selection_detial} alt=""/>
             </div>
           </div>
-          <div className="logout">
-            <p onClick={this.props.userActions.logout}>退出登录</p>
+          <div onClick={this.props.userActions.logout} className="logout">
+            <p>退出登录</p>
           </div>
         </div>
     )
