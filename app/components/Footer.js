@@ -16,7 +16,7 @@ class Footer extends React.Component{
       footer_main_color="black"
     }
 
-    if(pathname === 'User'){
+    if(pathname === 'Center'){
       footer_user_png = `${public_resource}/footer_user_active.png`
       footer_user_color="red"
     }

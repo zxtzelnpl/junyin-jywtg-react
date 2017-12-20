@@ -11,9 +11,10 @@ export default class TeacherReportDetail extends React.Component{
   }
 
   componentDidMount(){
-    console.log('TeacherReportDetail')
-    console.log(this.teacherItem)
-    console.log('TeacherReportDetail')
+    if(!this.props.user.check){
+      alert('需要注册后方可观看')
+      return this.props.history.replace('/Center')
+    }
     if(this.teacherItem.length===0){
       this.props.history.push('/TeacherReport')
     }
@@ -21,9 +22,9 @@ export default class TeacherReportDetail extends React.Component{
 
   render(){
     let htmlDom
-    if(this.teacherItem.length>0){
+    if(this.teacherItem.length>0&&this.props.user.check){
       let teacherItem = this.teacherItem[0]
-      let {content,id,title,timestamp} = teacherItem
+      let {content,title,timestamp} = teacherItem
       htmlDom= (
           <div>
             <div className="detail_title">{title}</div>
