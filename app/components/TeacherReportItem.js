@@ -6,9 +6,9 @@ import {public_resource} from "../constants/urls";
 
 export default class TeacherItem extends React.Component{
   render(){
-    let {id,central_idea,content,title,timestamp} = this.props
+    let {id,central_idea,title,timestamp} = this.props
     let url=`/TeacherReportDetail/${id}`
-    let teacher_report_img_num = Number(id)%15
+    let teacher_report_img_num = Number(id)%14+1
     let item_url = `${public_resource}/teacher_report/${teacher_report_img_num}.jpg`
     return (
         <Link to={url}>
