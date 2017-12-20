@@ -65,9 +65,9 @@ export default class TeacherReport extends React.Component{
 
     return (
         <div className="TeacherReport" ref={wrap=>{this.wrap=wrap}}>
-          <p className="title">
+          {/*<p className="title">
             <span><img src={teacher_img} />君银内参</span>
-          </p>
+          </p>*/}
           <div>
             {htmlDom}
           </div>

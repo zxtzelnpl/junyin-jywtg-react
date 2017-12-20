@@ -67,9 +67,9 @@ export default class DiskRead extends React.Component {
 
     return (
         <div className="diskRead" ref={wrap=>{this.wrap=wrap}}>
-          <p className="title">
+          {/*<p className="title">
             <span><img src={disk_img}/>实盘解读</span>
-          </p>
+          </p>*/}
           <div>
             {htmlDom}
           </div>

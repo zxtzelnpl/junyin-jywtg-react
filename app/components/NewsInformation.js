@@ -68,9 +68,9 @@ export default class NewsInformation extends React.Component {
 
     return (
         <div className="newsInformation" ref={wrap=>{this.wrap=wrap}}>
-          <p className="title">
+          {/*<p className="title">
             <span><img src={news_img} />机构资讯</span>
-          </p>
+          </p>*/}
           <div>
             {htmlDom}
           </div>
