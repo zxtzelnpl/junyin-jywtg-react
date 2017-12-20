@@ -9,7 +9,7 @@ import User from './containers/User'
 import Login from './containers/Login'
 import Center from './containers/Center'
 import Main from './subpages/Main'
-import Footer from './components/Footer'
+import Footer from './containers/Footer'
 // import Test from './subpages/Test'
 
 import './static/css/app.less'

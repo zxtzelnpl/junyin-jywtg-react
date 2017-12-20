@@ -1,0 +1,3 @@
+export const LOGO_CHANGE = 'LOGO_CHANGE'
+export const FOOTER_CHANGE = 'FOOTER_CHANGE'
+export const WRITE_CHANGE = 'WRITE_CHANGE'

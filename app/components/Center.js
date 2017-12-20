@@ -12,7 +12,12 @@ export default class Center extends React.Component {
     }
     else{
       return (
-          <Login user={this.props.user} userActions={this.props.userActions}/>
+          <Login
+              user={this.props.user}
+              button={this.props.button}
+              userActions={this.props.userActions}
+              buttonActions = {this.props.buttonActions}
+          />
       )
     }
   }
