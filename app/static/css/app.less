@@ -18,8 +18,29 @@ p{
     margin:0;
     padding:0;
 }
+@keyframes loading {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
 .container{
     margin:0 auto;
     width:7.5rem;
     background:#efefef;
+}
+
+.loading{
+    margin:0 auto;
+    padding:.1rem;
+    width:.48rem;
+    height:.48rem;
+    overflow: hidden;
+    img{
+        width:.48rem;
+        height:.48rem;
+        animation:loading 1s linear infinite;
+    }
 }
