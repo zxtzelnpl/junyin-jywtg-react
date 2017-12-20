@@ -1,0 +1,50 @@
+@loginBg:'http://public.jyzqsh.com/jywtg/loginBg.jpg';
+.Login{
+    width:7.5rem;
+    height:100%;
+    font-size:.3rem;
+    background:url(@loginBg) no-repeat;
+    background-size:100% 100%;
+    overflow: hidden;
+    .logo{
+        margin:2rem auto 0;
+        width:2.4rem;
+        height:2.4rem;
+        img{
+            width:100%;
+            height:auto;
+        }
+    }
+    .form_login{
+        margin-top:.5rem;
+        .phone,.secret{
+            input{
+                display:block;
+                margin:0 auto;
+                box-sizing: border-box;
+                padding:.2rem .4rem;
+                width:5.2rem;
+                height:.8rem;
+                border-radius:5px;
+            }
+        }
+        .secret{
+            margin-top:.3rem;
+        }
+        .button{
+            margin-top:.8rem;
+            p{
+                margin:0 auto;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                width:5.2rem;
+                height:.8rem;
+                border-radius:5px;
+                font-weight:bold;
+                color:#fff;
+                background:#d1121a;
+            }
+        }
+    }
+}

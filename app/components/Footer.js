@@ -7,6 +7,11 @@ class Footer extends React.Component{
   render(){
     let pathname = this.props.location.pathname.slice(1);
     let footer_main_png,footer_main_color,footer_user_png,footer_user_color;
+    if(pathname === 'Login'){
+      return (
+          <div />
+      )
+    }
     if(pathname === 'Main'){
       footer_main_png = `${public_resource}/footer_main_active.png`
       footer_main_color="red"
