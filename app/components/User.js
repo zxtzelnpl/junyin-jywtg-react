@@ -10,6 +10,7 @@ export default class User extends React.Component {
     let productCenter = `${public_resource}/productCenter.jpg`
     let aboutUs = `${public_resource}/aboutUs.jpg`
     let selection_detial = `${public_resource}/selection_detail.png`
+    let phone = this.props.user.phone
     return (
         <div className="User">
           <div className="banner">
@@ -18,7 +19,7 @@ export default class User extends React.Component {
               <div className="circle">
                 <img src={user_test}/>
               </div>
-              <span>13787878781</span>
+              <span>{phone}</span>
             </div>
           </div>
           <div className="user_selections">
@@ -45,7 +46,7 @@ export default class User extends React.Component {
             </div>
           </div>
           <div className="logout">
-            <p>退出登录</p>
+            <p onClick={this.props.userActions.logout}>退出登录</p>
           </div>
         </div>
     )

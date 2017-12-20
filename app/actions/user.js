@@ -47,3 +47,7 @@ export const fetchPostsIfNeeded = value => (dispatch, getState) => {
     return dispatch(fetchPosts(value))
   }
 }
+
+export const logout = ()=>({
+  type: actionTypes.USER_LOGOUT
+})

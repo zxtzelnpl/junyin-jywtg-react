@@ -7,6 +7,7 @@ import TeacherReport from './containers/TeacherReport'
 import TeacherReportDetail from './containers/TeacherReportDetail'
 import User from './containers/User'
 import Login from './containers/Login'
+import Center from './containers/Center'
 import Main from './subpages/Main'
 import Footer from './components/Footer'
 // import Test from './subpages/Test'
@@ -16,7 +17,7 @@ import './static/css/app.less'
 const App = ()=>{
   return(
       <div className="container">
-        <Route exact path="/" render={()=>(<Redirect to="/Login"/>)}/>
+        <Route exact path="/" render={()=>(<Redirect to="/Center"/>)}/>
         <Route path="/Main" component={Main}/>
         <Route path="/DiskRead" component={DiskRead}/>
         <Route path="/NewsInformation" component={NewsInformation}/>
@@ -25,6 +26,7 @@ const App = ()=>{
         <Route path="/TeacherReportDetail/:id" component={TeacherReportDetail}/>
         <Route path="/User" component={User}/>
         <Route path="/Login" component={Login}/>
+        <Route path="/Center" component={Center}/>
         <Footer />
       </div>
   )
