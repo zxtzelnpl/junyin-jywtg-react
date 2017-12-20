@@ -6,7 +6,8 @@ import NewsInformationDetail from './containers/NewsInformationDetail'
 import TeacherReport from './containers/TeacherReport'
 import TeacherReportDetail from './containers/TeacherReportDetail'
 import User from './containers/User'
-import Main from './components/Main'
+import Main from './subpages/Main'
+import Footer from './components/Footer'
 // import Test from './subpages/Test'
 
 import './static/css/app.less'
@@ -14,13 +15,6 @@ import './static/css/app.less'
 const App = ()=>{
   return(
       <div className="container">
-        <div style={{position:'fixed',display:'flex',flexDirection:'column',bottom:0,right:0}}>
-          <Link to="/Main">Main</Link>
-          <Link to="/DiskRead">DiskRead</Link>
-          <Link to="/NewsInformation">NewsInformation</Link>
-          <Link to="/TeacherReport">TeacherReport</Link>
-          <Link to="/User">User</Link>
-        </div>
         <Route exact path="/" render={()=>(<Redirect to="/Main"/>)}/>
         <Route path="/Main" component={Main}/>
         <Route path="/DiskRead" component={DiskRead}/>
@@ -29,6 +23,7 @@ const App = ()=>{
         <Route path="/TeacherReport" component={TeacherReport}/>
         <Route path="/TeacherReportDetail/:id" component={TeacherReportDetail}/>
         <Route path="/User" component={User}/>
+        <Footer />
       </div>
   )
 }

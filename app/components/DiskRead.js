@@ -1,16 +1,9 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import moment from 'moment'
-
-const DiskItem = ({title,content,timestamp})=>{
-  return (
-      <div className="readItem">
-        <p>{title}</p>
-        <p>{content}</p>
-        <p>{moment.unix(timestamp).format('YYYY-MM-DD hh:mm')}</p>
-      </div>
-  )
-}
-
+import DiskItem from './DiskReadItem'
+import {public_resource} from "../constants/urls";
+import './DiskRead.less'
 
 export default class DiskRead extends React.Component{
   constructor(props){
