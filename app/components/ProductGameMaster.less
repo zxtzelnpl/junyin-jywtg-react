@@ -1,0 +1,70 @@
+.ProductGameMaster {
+    padding-bottom: 1.1rem;
+    .wrap_img {
+        width: 7.5rem;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .product_info_wrap {
+        position: relative;
+    }
+    .product_info {
+        box-sizing: border-box;
+        position: absolute;
+        padding: .1rem;
+        left: .3rem;
+        bottom: .2rem;
+        width: 6.9rem;
+        height: 5.5rem;
+        background: rgba(255, 255, 255, .7);
+        .innerWrap {
+            padding: .2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            box-sizing: border-box;
+            border: 2px solid #fff;
+            width: 6.7rem;
+            height: 5.3rem;
+        }
+        h4 {
+            align-self: flex-start;
+            font-size: .5rem;
+            font-weight: bold;
+        }
+        p.content {
+            font-size: .24rem;
+            color: #4e585f;
+        }
+        h6 {
+            display: flex;
+            p {
+                text-overflow: ellipsis; //超过显示省略号
+                overflow: hidden; //超过不显示
+                white-space: nowrap; //不换行
+                font-size: .3rem;
+                color: #000;
+                .momey {
+                    font-size: .8rem;
+                    color: #cb272e;
+                }
+
+            }
+
+        }
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 6.1rem;
+            height: 1.1rem;
+            border-radius: 5px;
+            font-size: .3rem;
+            color: #fff;
+            background: #ce2930;
+        }
+    }
+}

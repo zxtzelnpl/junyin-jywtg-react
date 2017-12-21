@@ -6,10 +6,11 @@ const requestPosts = () => ({
   type: actionTypes.USERCHECK_REQUEST_POST
 })
 
-const received = (phone) =>({
+const received = (phone,time) =>({
   type: actionTypes.USERCHECK_RECEIVED,
   receivedAt:moment().format('X'),
-  phone
+  phone,
+  time
 })
 
 const receivedError = () =>({
@@ -25,7 +26,7 @@ const fetchPosts = value => dispatch => {
       .then(response => response.json())
       .then(json => {
         if(json.error==='1'){
-          dispatch(received(phone))
+          dispatch(received(phone,json.time))
         }
         else{
           alert(json.msg)

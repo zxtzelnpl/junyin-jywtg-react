@@ -4,10 +4,12 @@ import news from './news'
 import teacher from './teacher'
 import user from './user'
 import button from './button'
+import record from './record'
 export default combineReducers({
   disk,
   news,
   teacher,
   user,
-  button
+  button,
+  record
 })

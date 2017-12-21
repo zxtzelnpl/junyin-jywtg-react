@@ -6,6 +6,7 @@ import StockIndex from '../components/StockIndex'
 import DiskReadBrief from '../containers/DiskReadBrief'
 import NewsInformationBreif from '../containers/NewsInformationBreif'
 import TeacherReportBreif from '../containers/TeacherReportBreif'
+import ProductGameMasterBrief from '../containers/ProductGameMasterBrief'
 
 export default class Main extends React.Component{
   constructor(props){
@@ -22,6 +23,8 @@ export default class Main extends React.Component{
           <StockIndex />
           <div className="blank_20" />
           <DiskReadBrief />
+          <div className="blank_20" />
+          <ProductGameMasterBrief />
           <div className="blank_20" />
           <NewsInformationBreif />
           <div className="blank_20" />

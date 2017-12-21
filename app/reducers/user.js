@@ -21,6 +21,7 @@ export default function disk(state = initialState, action) {
         isFetching: false,
         receivedAt: action.receivedAt,
         phone: action.phone,
+        time: action.time,
         check: true
       }
     case actionTypes.USERCHECK_ERROR:

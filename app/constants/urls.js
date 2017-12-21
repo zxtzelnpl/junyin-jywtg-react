@@ -3,3 +3,4 @@ export const news_infomation='http://guanwei.zgjy518.com/News_information/ae84df
 export const teacher_report ='http://guanwei.zgjy518.com/Teacher_report/b9f3f290bbd38c3ab'
 export const user_check='/ashx/User_Login.ashx'
 export const public_resource = 'http://public.jyzqsh.com/jywtg'
+export const user_record = '/ashx/user_Record.ashx'

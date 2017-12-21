@@ -1,5 +1,6 @@
 import React from 'react'
 import {public_resource} from "../constants/urls";
+import {Link} from 'react-router-dom'
 import './User.less'
 
 export default class User extends React.Component {
@@ -24,27 +25,27 @@ export default class User extends React.Component {
             </div>
           </div>
           <div className="user_selections">
-            <div className="selection">
+            <Link to="/ProductGameMaster" className="selection">
               <div>
                 <img className="selection_logo" src={serviceTime} alt=""/>
                 服务期限
               </div>
               <img className="selection_detail" src={selection_detial} alt=""/>
-            </div>
-            <div className="selection">
+            </Link>
+            <Link to="/ProductGameMasterList" className="selection">
               <div>
                 <img className="selection_logo" src={productCenter} alt=""/>
                 产品中心
               </div>
               <img className="selection_detail" src={selection_detial} alt=""/>
-            </div>
-            <div className="selection">
+            </Link>
+            <Link to="/Main" className="selection" style={{"display":"none"}}>
               <div>
                 <img className="selection_logo" src={aboutUs} alt=""/>
                 关于我们
               </div>
               <img className="selection_detail" src={selection_detial} alt=""/>
-            </div>
+            </Link>
           </div>
           <div onClick={this.props.userActions.logout} className="logout">
             <p>退出登录</p>

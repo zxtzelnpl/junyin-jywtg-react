@@ -10,6 +10,8 @@ import Login from './containers/Login'
 import Center from './containers/Center'
 import Main from './subpages/Main'
 import Footer from './containers/Footer'
+import ProductGameMaster from './containers/ProductGameMaster'
+import ProductGameMasterList from './containers/ProductGameMasterList'
 // import Test from './subpages/Test'
 
 import './static/css/app.less'
@@ -27,6 +29,8 @@ const App = ()=>{
         <Route path="/User" component={User}/>
         <Route path="/Login" component={Login}/>
         <Route path="/Center" component={Center}/>
+        <Route path="/ProductGameMaster" component={ProductGameMaster}/>
+        <Route path="/ProductGameMasterList" component={ProductGameMasterList}/>
         <Footer />
       </div>
   )
