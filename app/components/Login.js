@@ -51,6 +51,7 @@ export default class Login extends React.Component {
   }
 
   componentWillUnmount(){
+    this.outWrite()
     clearInterval(this.checkHight)
   }
 
