@@ -37,7 +37,7 @@ export default class TeacherReportBreif extends React.Component{
         <div className="TeacherReportBreif">
           <p className="title">
             <span><img src={teacher_img} />君银内参</span>
-            <Link to="/TeacherReport"><img src={detail_img} alt=""/></Link>
+            <Link to="/NewsPage/teacher"><img src={detail_img} alt=""/></Link>
           </p>
           <div>
             {htmlDom}

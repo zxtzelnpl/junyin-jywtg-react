@@ -9,6 +9,7 @@ import User from './containers/User'
 import Login from './containers/Login'
 import Center from './containers/Center'
 import Main from './subpages/Main'
+import NewsPage from './subpages/NewsPage'
 import Footer from './containers/Footer'
 import ProductGameMaster from './containers/ProductGameMaster'
 import ProductGameMasterList from './containers/ProductGameMasterList'
@@ -21,6 +22,7 @@ const App = ()=>{
       <div className="container">
         <Route exact path="/" render={()=>(<Redirect to="/Center"/>)}/>
         <Route path="/Main" component={Main}/>
+        <Route path="/NewsPage/:mark" component={NewsPage}/>
         <Route path="/DiskRead" component={DiskRead}/>
         <Route path="/NewsInformation" component={NewsInformation}/>
         <Route path="/NewsInformationDetail/:id" component={NewsInformationDetail}/>
@@ -30,6 +32,7 @@ const App = ()=>{
         <Route path="/Login" component={Login}/>
         <Route path="/Center" component={Center}/>
         <Route path="/ProductGameMaster" component={ProductGameMaster}/>
+        <Route path="/ProductGameMasterList" component={ProductGameMasterList}/>
         <Route path="/ProductGameMasterList" component={ProductGameMasterList}/>
         <Footer />
       </div>

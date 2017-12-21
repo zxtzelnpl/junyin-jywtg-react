@@ -55,7 +55,7 @@ export default class NewsInformation extends React.Component {
 
   render() {
     let data = this.props.news.data
-    let news_img = `${public_resource}/news.jpg`
+    let head_img = `${public_resource}/news_information_head.jpg`
     let loading_img = `${public_resource}/loading.png`
     let htmlDom = (
         <div/>
@@ -68,14 +68,16 @@ export default class NewsInformation extends React.Component {
 
     return (
         <div className="newsInformation" ref={wrap=>{this.wrap=wrap}}>
-          {/*<p className="title">
-            <span><img src={news_img} />机构资讯</span>
-          </p>*/}
-          <div>
-            {htmlDom}
+          <div className="title">
+            <img src={head_img} alt=""/>
           </div>
-          <div className="loading" ref={loading=>{this.loading=loading}}>
-            <img src={loading_img} />
+          <div className="wrap">
+            <div>
+              {htmlDom}
+            </div>
+            <div className="loading" ref={loading=>{this.loading=loading}}>
+              <img src={loading_img} />
+            </div>
           </div>
         </div>
     )

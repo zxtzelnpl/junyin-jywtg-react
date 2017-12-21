@@ -13,7 +13,7 @@ export default class DiskItem extends React.Component{
     return (
         <div className="readItem">
           <div className="read_time">
-            <p>{timeArr[0]}</p>
+            <p>{timeArr[0]}<span className="circle" /></p>
             <p>{timeArr[1]}</p>
           </div>
           <div className="read_content_wrap">

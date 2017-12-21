@@ -57,7 +57,7 @@ export default class NewsInformation extends React.Component {
         <div className="newsInformationBreif">
           <p className="title">
             <span><img src={news_img} />机构资讯</span>
-            <Link to="/NewsInformation"><img src={detail_img} alt=""/></Link>
+            <Link to="/NewsPage/news"><img src={detail_img} alt=""/></Link>
           </p>
           {htmlDom}
         </div>

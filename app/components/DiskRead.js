@@ -54,7 +54,7 @@ export default class DiskRead extends React.Component {
   render() {
     let htmlDom
     let datas = this.props.disk.data
-    let disk_img = `${public_resource}/disk.jpg`
+    let head_img = `${public_resource}/disk_read_head.jpg`
     let loading_img = `${public_resource}/loading.png`
     if (datas.length === 0) {
       htmlDom = (<div/>)
@@ -67,14 +67,16 @@ export default class DiskRead extends React.Component {
 
     return (
         <div className="diskRead" ref={wrap=>{this.wrap=wrap}}>
-          {/*<p className="title">
-            <span><img src={disk_img}/>实盘解读</span>
-          </p>*/}
-          <div>
-            {htmlDom}
+          <div className="title">
+            <img src={head_img} alt=""/>
           </div>
-          <div className="loading" ref={loading=>{this.loading=loading}}>
-            <img src={loading_img} />
+          <div className="wrap">
+            <div>
+              {htmlDom}
+            </div>
+            <div className="loading" ref={loading=>{this.loading=loading}}>
+              <img src={loading_img} />
+            </div>
           </div>
         </div>
     )

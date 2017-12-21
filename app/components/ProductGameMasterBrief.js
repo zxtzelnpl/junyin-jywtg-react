@@ -21,7 +21,7 @@ export default class ProductGameMasterBrief extends React.Component {
       let leftDays = time.diff(now,'days')
       console.warn(typeof leftDays)
       if(leftDays>0){
-        timeDom = <p>剩余天数：{leftDays}</p>
+        timeDom = <span className="leftDays">（剩余天数：{leftDays}）</span>
       }
     }
 
@@ -35,8 +35,7 @@ export default class ProductGameMasterBrief extends React.Component {
               <h4>博弈大师</h4>
               <p>每天1~2只短线金股，炒股可以很简单</p>
               <h6>
-                <p>￥<span>3300</span>元/30天</p>
-                {timeDom}
+                <p><span className="money">3300</span>元/30天{timeDom}</p>
               </h6>
             </div>
           </div>

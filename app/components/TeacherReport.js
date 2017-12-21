@@ -52,7 +52,7 @@ export default class TeacherReport extends React.Component{
 
   render(){
     let data = this.props.teacher.data
-    let teacher_img = `${public_resource}/teacher.jpg`
+    let head_img = `${public_resource}/teacher_report_head.jpg`
     let loading_img = `${public_resource}/loading.png`
     let htmlDom = (
         <div/>
@@ -65,9 +65,9 @@ export default class TeacherReport extends React.Component{
 
     return (
         <div className="TeacherReport" ref={wrap=>{this.wrap=wrap}}>
-          {/*<p className="title">
-            <span><img src={teacher_img} />君银内参</span>
-          </p>*/}
+          <div className="title">
+            <img src={head_img}/>
+          </div>
           <div>
             {htmlDom}
           </div>
