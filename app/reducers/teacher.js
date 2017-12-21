@@ -19,6 +19,11 @@ export default function disk(state = initialState, action) {
         receivedAt:action.receivedAt,
         isFetching:false
       }
+    case actionTypes.TEACHER_ERROR:
+      return {
+        ...state,
+        isFetching: false
+      }
     default:
       return state
   }

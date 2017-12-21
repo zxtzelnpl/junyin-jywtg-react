@@ -15,6 +15,10 @@ const received = (data) =>({
   data
 })
 
+const receivedError = () => ({
+  type:actionTypes.NEWS_ERROR
+})
+
 const fetchPosts = value => dispatch => {
   dispatch(requestPosts())
   let {limit,query_start_stamp,query_end_stamp} = value
@@ -30,10 +34,12 @@ const fetchPosts = value => dispatch => {
         }
         else{
           console.log(json)
+          dispatch(receivedError())
         }
       })
       .catch(err=>{
         console.log(err)
+        dispatch(receivedError())
       })
 }
 

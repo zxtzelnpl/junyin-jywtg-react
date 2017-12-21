@@ -1,2 +1,3 @@
 export const DISK_REQUEST_JSONP = 'DISK_REQUEST_JSONP'
 export const DISK_RECEIVED = 'DISK_RECEIVED'
+export const DISK_ERROR = 'DISK_ERROR'
