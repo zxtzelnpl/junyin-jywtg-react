@@ -11,7 +11,6 @@ import App from './App'
 import Loading from './components/Loading'
 
 
-myStorage.clear('user')
 if (typeof __DEV__ !== 'undefined' && __DEV__) {
   console.info('"__DEV__=' + __DEV__ + '",这里是测试环境')
   myStorage.clear('user')

@@ -13,10 +13,10 @@ class StockIndexItem extends React.Component {
     let mark = change.indexOf('-')>-1?'':'+'
 
     return (
-        <div className="stockIndexItem" style={{'color':color}}>
-          <p>{name}</p>
-          <p>{total}</p>
-          <p><span>{mark}{change}</span><span>{mark}{persent}%</span></p>
+        <div className="stockIndexItem">
+          <p style={{'color':'gray'}}>{name}</p>
+          <p style={{'color':color}}>{Number(total).toFixed(2)}</p>
+          <p style={{'color':color}}><span>{mark}{change}</span><span>{mark}{persent}%</span></p>
         </div>
     )
   }
