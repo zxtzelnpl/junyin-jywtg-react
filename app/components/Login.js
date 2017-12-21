@@ -55,10 +55,10 @@ export default class Login extends React.Component {
   }
 
   userInput(){
-    if(this.height < window.innerHeight){
+    if(this.height <= window.innerHeight&&this.props.button.write){
       this.outWrite()
     }
-    else{
+    else if(this.height > window.innerHeight&&!this.props.button.write){
       this.inWrite()
     }
   }
