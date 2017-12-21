@@ -10,12 +10,13 @@ class StockIndexItem extends React.Component {
     let change = arr[2]
     let persent = arr[3]
     let color = change.indexOf('-')>-1?'green':'red'
+    let mark = change.indexOf('-')>-1?'':'+'
 
     return (
         <div className="stockIndexItem" style={{'color':color}}>
           <p>{name}</p>
           <p>{total}</p>
-          <p><span>{change}</span><span>{persent}%</span></p>
+          <p><span>{mark}{change}</span><span>{mark}{persent}%</span></p>
         </div>
     )
   }
