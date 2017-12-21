@@ -25,14 +25,13 @@ export default class StockIndex extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      hq_str_s_sh000001: '上证指数,*****,*****,*****,*****,*****',
-      hq_str_s_sz399001: '深证成指,*****,*****,*****,*****,*****',
-      hq_str_s_sz399006: '创业板指,*****,*****,*****,*****,*****'
+      hq_str_s_sh000001: hq_str_s_sh000001,
+      hq_str_s_sz399001: hq_str_s_sz399001,
+      hq_str_s_sz399006: hq_str_s_sz399006
     }
   }
 
   componentDidMount() {
-    this.updateDates()
     this.updating = setInterval(this.updateDates.bind(this), 5000)
   }
 
