@@ -12,6 +12,7 @@ export default class Login extends React.Component {
     }
     this.inWrite = this.inWrite.bind(this)
     this.outWrite = this.outWrite.bind(this)
+    this.userInput = this.userInput.bind(this)
     this.height=window.innerHeight-20
   }
 
@@ -47,7 +48,7 @@ export default class Login extends React.Component {
   }
 
   componentDidMount(){
-    this.checkHight = setInterval(this.userInput.bind(this),2000)
+    this.checkHight = setInterval(this.userInput,1000)
   }
 
   componentWillUnmount(){
