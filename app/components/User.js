@@ -11,13 +11,14 @@ export default class User extends React.Component {
     let aboutUs = `${public_resource}/aboutUs.jpg`
     let selection_detial = `${public_resource}/selection_detail.png`
     let phone = this.props.user.phone
+    let user_img = this.props.user.headimgurl
     return (
         <div className="User">
           <div className="banner">
             <img className="bannerBg" src={banner}/>
             <div className="userInfo">
               <div className="circle">
-                <img src={user_test}/>
+                <img src={user_img}/>
               </div>
               <span>{phone}</span>
             </div>

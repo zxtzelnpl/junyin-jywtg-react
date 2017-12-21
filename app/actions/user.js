@@ -18,8 +18,8 @@ const receivedError = () =>({
 
 const fetchPosts = value => dispatch => {
   dispatch(requestPosts())
-  let {phone,secret} = value
-  let url = `${user_check}?phone=${phone}&phone_pwd=${secret}`
+  let {phone,secret,openid} = value
+  let url = `${user_check}?phone=${phone}&phone_pwd=${secret}&openid=${openid}`
 
   return fetch(url)
       .then(response => response.json())

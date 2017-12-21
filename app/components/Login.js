@@ -7,8 +7,9 @@ export default class Login extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      phone: '',
-      secret: ''
+      phone: this.props.user.phone,
+      secret: '',
+      openid:this.props.user.openid
     }
     this.inWrite = this.inWrite.bind(this)
     this.outWrite = this.outWrite.bind(this)
@@ -32,8 +33,7 @@ export default class Login extends React.Component {
   }
 
   onSub() {
-    let {phone, secret} = this.state
-    if (!phoneCheck(phone)) {
+    if (!phoneCheck(this.state.phone)) {
       return alert('手机格式有错误')
     }
     this.props.userActions.fetchPostsIfNeeded(this.state)

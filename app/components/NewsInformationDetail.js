@@ -12,8 +12,13 @@ export default class NewsInformationDetail extends React.Component {
   }
 
   componentDidMount() {
-    if(!this.props.user.check){
+    let {check,receivedAt} = this.props.user
+    if(!check){
       alert('需要注册后方可观看')
+      return this.props.history.replace('/Center')
+    }
+    if(moment().isAfter(moment.unix(receivedAt).add(1,'days'))){
+      alert('登录信息已经失效')
       return this.props.history.replace('/Center')
     }
     if (this.newsItem.length === 0) {

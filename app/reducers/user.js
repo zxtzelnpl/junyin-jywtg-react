@@ -4,6 +4,7 @@ export const initialState = {
   isFetching: false,
   receivedAt: 0,
   phone: '',
+  openid: '',
   check: false
 }
 
@@ -16,6 +17,7 @@ export default function disk(state = initialState, action) {
       }
     case actionTypes.USERCHECK_RECEIVED:
       return {
+        ...state,
         isFetching: false,
         receivedAt: action.receivedAt,
         phone: action.phone,

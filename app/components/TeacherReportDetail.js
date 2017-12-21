@@ -1,6 +1,7 @@
 import React from 'react'
 import moment from "moment/moment";
 import './TeacherReportDetail.less'
+
 export default class TeacherReportDetail extends React.Component{
   constructor(props){
     super(props)
@@ -11,8 +12,13 @@ export default class TeacherReportDetail extends React.Component{
   }
 
   componentDidMount(){
-    if(!this.props.user.check){
+    let {check,receivedAt} = this.props.user
+    if(!check){
       alert('需要注册后方可观看')
+      return this.props.history.replace('/Center')
+    }
+    if(moment().isAfter(moment.unix(receivedAt).add(1,'days'))){
+      alert('登录信息已经失效')
       return this.props.history.replace('/Center')
     }
     if(this.teacherItem.length===0){
