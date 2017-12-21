@@ -2,8 +2,21 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {public_resource} from "../constants/urls";
 import './Footer.less'
+import moment from "moment/moment";
 
 class Footer extends React.Component {
+  componentDidMount(){
+    let {check,receivedAt} = this.props.user
+    if(!check){
+      alert('需要注册后方可观看')
+      return this.props.history.replace('/Center')
+    }
+    if(moment().isAfter(moment.unix(receivedAt).add(1,'days'))){
+      alert('登录信息已经失效')
+      return this.props.history.replace('/Center')
+    }
+  }
+
   render() {
     let pathname = this.props.location.pathname.slice(1);
     let footer_main_png, footer_main_color,

@@ -12,15 +12,15 @@ export default class TeacherReportDetail extends React.Component{
   }
 
   componentDidMount(){
-    let {check,receivedAt} = this.props.user
-    if(!check){
-      alert('需要注册后方可观看')
-      return this.props.history.replace('/Center')
-    }
-    if(moment().isAfter(moment.unix(receivedAt).add(1,'days'))){
-      alert('登录信息已经失效')
-      return this.props.history.replace('/Center')
-    }
+    // let {check,receivedAt} = this.props.user
+    // if(!check){
+    //   alert('需要注册后方可观看')
+    //   return this.props.history.replace('/Center')
+    // }
+    // if(moment().isAfter(moment.unix(receivedAt).add(1,'days'))){
+    //   alert('登录信息已经失效')
+    //   return this.props.history.replace('/Center')
+    // }
     if(this.teacherItem.length===0){
       this.props.history.push('/TeacherReport')
     }

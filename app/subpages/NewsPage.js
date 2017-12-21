@@ -2,6 +2,7 @@ import React from 'react'
 import './NewsPage.less'
 import NewsInformation from '../containers/NewsInformation'
 import TeacherReport from '../containers/TeacherReport'
+import moment from "moment/moment";
 
 export default class NewsPage extends React.Component{
   constructor(props){
@@ -15,6 +16,18 @@ export default class NewsPage extends React.Component{
     this.setState({
       mark:mark
     })
+  }
+
+  componentDidMount(){
+    // let {check,receivedAt} = this.props.user
+    // if(!check){
+    //   alert('需要注册后方可观看')
+    //   return this.props.history.replace('/Center')
+    // }
+    // if(moment().isAfter(moment.unix(receivedAt).add(1,'days'))){
+    //   alert('登录信息已经失效')
+    //   return this.props.history.replace('/Center')
+    // }
   }
 
   render(){

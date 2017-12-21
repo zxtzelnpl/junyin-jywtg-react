@@ -7,10 +7,23 @@ import DiskReadBrief from '../containers/DiskReadBrief'
 import NewsInformationBreif from '../containers/NewsInformationBreif'
 import TeacherReportBreif from '../containers/TeacherReportBreif'
 import ProductGameMasterBrief from '../containers/ProductGameMasterBrief'
+import moment from "moment/moment";
 
 export default class Main extends React.Component{
   constructor(props){
     super(props)
+  }
+
+  componentDidMount(){
+    // let {check,receivedAt} = this.props.user
+    // if(!check){
+    //   alert('需要注册后方可观看')
+    //   return this.props.history.replace('/Center')
+    // }
+    // if(moment().isAfter(moment.unix(receivedAt).add(1,'days'))){
+    //   alert('登录信息已经失效')
+    //   return this.props.history.replace('/Center')
+    // }
   }
 
   render(){

@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 
 function mapStateToProps(state) {
   return {
+    user:state.user,
     button:state.button,
   }
 }

@@ -24,6 +24,9 @@ const fetchPosts = value => dispatch => {
         if(json.error === '0'){
           dispatch(received(json.data))
         }
+        else if(json.error === '1'){
+          dispatch(received([]))
+        }
         else{
           console.log(json)
           dispatch(receivedError())
