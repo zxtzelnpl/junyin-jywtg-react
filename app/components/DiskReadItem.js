@@ -9,12 +9,19 @@ export default class DiskItem extends React.Component{
 
   render(){
     let videoDom = <div />
-    let {title,content,timestamp,video_path,cover_path} = this.props
+    let pictureDom = <div />
+    let {title,content,timestamp,video_path,cover_path,picture} = this.props
     let timeArr = moment.unix(timestamp).format('MM-DD HH:mm').split(' ')
     if(video_path!==''){
-      videoDom = (<video src={video_path} poster={cover_path}>
-        <source src={video_path} type="video/mp4" />
-      </video>)
+      videoDom = (<video
+          src={video_path}
+          poster={cover_path}
+          style={{'width': '100%','height': 'auto','maxWidth': '1200px','margin': '0 auto','display': 'block'}}
+          controls="false"
+      >your browser does not support the video tag</video>)
+    }
+    if(picture!==null||picture !== ''){
+      pictureDom=(<img src={picture} />)
     }
     return (
         <div className="readItem">
@@ -26,6 +33,7 @@ export default class DiskItem extends React.Component{
             <p className="read_title">{title}</p>
             <p className="read_content">{content}</p>
             {videoDom}
+            {pictureDom}
           </div>
         </div>
     )
