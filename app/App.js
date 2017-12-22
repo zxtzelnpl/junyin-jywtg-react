@@ -33,7 +33,6 @@ const App = ()=>{
         <Route path="/Center" component={Center}/>
         <Route path="/ProductGameMaster" component={ProductGameMaster}/>
         <Route path="/ProductGameMasterList" component={ProductGameMasterList}/>
-        <Route path="/ProductGameMasterList" component={ProductGameMasterList}/>
         <Footer />
       </div>
   )

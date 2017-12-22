@@ -17,7 +17,7 @@
         display:flex;
         flex-direction: column;
         align-items: flex-start;
-        justify-content: center;
+        justify-content: space-between;
         width:3.9rem;
         height:1.8rem;
         h4{
@@ -31,20 +31,17 @@
             display:flex;
             align-items: center;
             justify-content: space-between;
-            p{
-                height:.4rem;
+            height:.4rem;
+            font-size:.28rem;
+            color:#ff790b;
+            overflow: hidden;   //超过不显示
+            white-space:nowrap; //不换行
+            .money{
+                font-size:.36rem;
+            }
+            .leftDays{
                 font-size:.28rem;
-                color:#ff790b;
-                text-align: left;
-                overflow: hidden;   //超过不显示
-                white-space:nowrap; //不换行
-                .money{
-                    font-size:.36rem;
-                }
-                .leftDays{
-                    font-size:.24rem;
-                    color:gray;
-                }
+                color:gray;
             }
         }
     }

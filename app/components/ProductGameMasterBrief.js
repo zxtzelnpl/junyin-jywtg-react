@@ -35,7 +35,7 @@ export default class ProductGameMasterBrief extends React.Component {
               <h4>博弈大师</h4>
               <p>每天1~2只短线金股，炒股可以很简单</p>
               <h6>
-                <p><span className="money">3300</span>元/30天{timeDom}</p>
+                <span className="money">3300</span>元/30天{timeDom}
               </h6>
             </div>
           </div>

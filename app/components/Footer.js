@@ -6,12 +6,21 @@ import moment from "moment/moment";
 
 class Footer extends React.Component {
   componentDidMount(){
+    this.checkLogin()
+  }
+
+  componentDidUpdate(){
+    this.checkLogin()
+  }
+
+  checkLogin(){
+    let pathname = this.props.location.pathname.slice(1);
     let {check,receivedAt} = this.props.user
-    if(!check){
-      alert('需要注册后方可观看')
+    if(!check&&pathname !== 'Center'){
+      alert('需要登录后方可观看')
       return this.props.history.replace('/Center')
     }
-    if(moment().isAfter(moment.unix(receivedAt).add(1,'days'))){
+    if(moment().isAfter(moment.unix(receivedAt).add(1,'days'))&&pathname !== 'Center'){
       alert('登录信息已经失效')
       return this.props.history.replace('/Center')
     }
