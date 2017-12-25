@@ -16,7 +16,7 @@ export default class TeacherItem extends React.Component{
             <div className="left">
               <p className="teacher_item_title">{title}</p>
               <p className="teacher_item_central">{central_idea}</p>
-              <p className="teacher_item_time">{moment.unix(timestamp).format('YYYY-MM-DD hh:mm')}</p>
+              <p className="teacher_item_time">{moment.unix(timestamp).format('YYYY-MM-DD HH:mm')}</p>
             </div>
             <div className="right">
               <img src={item_url} alt=""/>
