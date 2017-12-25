@@ -23,7 +23,7 @@ export default class ProductGameMasterList extends React.Component {
         return (
             <a href={url}>
               <p className="record_title">博弈大师</p>
-              <span className="record_time">{moment(Createtime).format('YYYY-MM-DD hh:mm')}</span>
+              <span className="record_time">{moment(Createtime).format('YYYY-MM-DD HH:mm')}</span>
             </a>
         )
       })
