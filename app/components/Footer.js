@@ -11,6 +11,7 @@ class Footer extends React.Component {
 
   componentDidUpdate(){
     this.checkLogin()
+    window.scrollTo(0,0)
   }
 
   checkLogin(){
