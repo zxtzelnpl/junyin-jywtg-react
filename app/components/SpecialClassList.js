@@ -31,13 +31,14 @@ class Item extends React.Component {
 export default class SpecialClassList extends React.Component {
   constructor(props) {
     super(props)
+    this.teacher_picture = this.props.match.params.teacher
     this.checkLoading=this.checkLoading.bind(this)
   }
 
   componentDidMount() {
     if (this.props.specialClass.data.length === 0) {
       let value = {
-        limit: 20,
+        limit: 40,
         query_start_stamp: 0,
         query_end_stamp: moment().format('X')
       }
@@ -48,7 +49,7 @@ export default class SpecialClassList extends React.Component {
     document.addEventListener('scroll',this.checkLoading)
     if (this.props.specialClass.data.length === 0) {
       let value = {
-        limit: 20,
+        limit: 40,
         query_start_stamp: 0,
         query_end_stamp: moment().format('X')
       }
@@ -86,18 +87,21 @@ export default class SpecialClassList extends React.Component {
   }
 
   render() {
-    let data = this.props.specialClass.data
+    let datas = this.props.specialClass.data.filter(item=>{
+      return item.teacher_picture === this.teacher_picture
+    })
     let loading_img = `${public_resource}/loading.png`
-    let htmlDom = data.map(item => {
+    let htmlDom = datas.map(item => {
       return (<Item key={item.id} {...item} />)
     })
+    let loadingShow = this.props.specialClass.isFetching?'visible':'hidden'
 
     return (
         <div className="SpecialClassList" ref={wrap=>{this.wrap = wrap}}>
           <div className="wrap">
             {htmlDom}
           </div>
-          <div className="loading" ref={loading=>{this.loading=loading}}>
+          <div className="loading" ref={loading=>{this.loading=loading}} style={{'visibility':loadingShow}}>
             <img src={loading_img} />
           </div>
         </div>
