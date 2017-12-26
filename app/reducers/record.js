@@ -6,7 +6,7 @@ export const initialState = {
   receive:false,
 }
 
-export default function disk(state = initialState, action) {
+export default function record(state = initialState, action) {
   switch (action.type) {
     case actionTypes.RECORD_REQUEST_JSONP:
       return {

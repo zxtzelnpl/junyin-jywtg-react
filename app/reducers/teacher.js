@@ -6,7 +6,7 @@ export const initialState = {
   data: []
 }
 
-export default function disk(state = initialState, action) {
+export default function teacher(state = initialState, action) {
   switch (action.type) {
     case actionTypes.TEACHER_REQUEST_JSONP:
       return {

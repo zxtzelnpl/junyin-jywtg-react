@@ -8,7 +8,7 @@ export const initialState = {
   check: false
 }
 
-export default function disk(state = initialState, action) {
+export default function user(state = initialState, action) {
   switch (action.type) {
     case actionTypes.USERCHECK_REQUEST_POST:
       return {

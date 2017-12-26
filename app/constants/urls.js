@@ -4,3 +4,5 @@ export const teacher_report ='http://guanwei.zgjy518.com/Teacher_report/b9f3f290
 export const user_check='/ashx/User_Login.ashx'
 export const public_resource = 'http://public.jyzqsh.com/jywtg'
 export const user_record = '/ashx/user_Record.ashx'
+export const exchange_guide='http://guanwei.zgjy518.com/video/a1e9d77e95b5cf993'
+export const special_class='http://guanwei.zgjy518.com/video/b5a2661f6a2b763e'

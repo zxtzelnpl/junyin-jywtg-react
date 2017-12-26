@@ -1,4 +1,4 @@
-import * as actionTypes from '../constants/news'
+import * as actionTypes from '../constants/exchangeGuide'
 
 export const initialState = {
   isFetching: false,
@@ -6,20 +6,20 @@ export const initialState = {
   data: []
 }
 
-export default function news(state = initialState, action) {
+export default function exchangeGuide(state = initialState, action) {
   switch (action.type) {
-    case actionTypes.NEWS_REQUEST_JSONP:
+    case actionTypes.EXCHANGEGUIDE_REQUEST_JSONP:
       return {
         ...state,
         isFetching:true
       }
-    case actionTypes.NEWS_RECEIVED:
+    case actionTypes.EXCHANGEGUIDE_RECEIVED:
       return {
         data:state.data.concat(action.data),
         receivedAt:action.receivedAt,
         isFetching:false
       }
-    case actionTypes.NEWS_ERROR:
+    case actionTypes.EXCHANGEGUIDE_ERROR:
       return {
         ...state,
         isFetching: false

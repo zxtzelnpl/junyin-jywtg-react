@@ -19,7 +19,6 @@ export default class ProductGameMaster extends React.Component {
       let time = moment(this.props.user.time)
       let now = moment()
       let leftDays = time.diff(now,'days')
-      console.warn(typeof leftDays)
       if(leftDays>0){
         timeDom = <span>（剩余天数：{leftDays}）</span>
       }

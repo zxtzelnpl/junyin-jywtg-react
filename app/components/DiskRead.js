@@ -1,8 +1,8 @@
+import './DiskRead.less'
 import React from 'react'
 import moment from 'moment'
 import DiskItem from './DiskReadItem'
 import {public_resource} from "../constants/urls";
-import './DiskRead.less'
 
 export default class DiskRead extends React.Component {
   constructor(props) {

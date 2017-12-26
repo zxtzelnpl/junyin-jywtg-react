@@ -11,8 +11,7 @@ export default class TeacherItem extends React.Component{
     let teacher_report_img_num = Number(id)%14+1
     let item_url = `${public_resource}/teacher_report/${teacher_report_img_num}.jpg`
     return (
-        <Link to={url}>
-          <div className="teacherItem">
+        <Link to={url} className="teacherItem">
             <div className="left">
               <p className="teacher_item_title">{title}</p>
               <p className="teacher_item_central">{central_idea}</p>
@@ -21,7 +20,6 @@ export default class TeacherItem extends React.Component{
             <div className="right">
               <img src={item_url} alt=""/>
             </div>
-          </div>
         </Link>
 
     )

@@ -13,6 +13,8 @@ import NewsPage from './subpages/NewsPage'
 import Footer from './containers/Footer'
 import ProductGameMaster from './containers/ProductGameMaster'
 import ProductGameMasterList from './containers/ProductGameMasterList'
+import SpecialClass from './containers/SpecialClass'
+import SpecialClassList from './containers/SpecialClassList'
 // import Test from './subpages/Test'
 
 import './static/css/app.less'
@@ -33,6 +35,8 @@ const App = ()=>{
         <Route path="/Center" component={Center}/>
         <Route path="/ProductGameMaster" component={ProductGameMaster}/>
         <Route path="/ProductGameMasterList" component={ProductGameMasterList}/>
+        <Route path="/SpecialClass" component={SpecialClass}/>
+        <Route path="/SpecialClassList/:teacher" component={SpecialClassList}/>
         <Footer />
       </div>
   )

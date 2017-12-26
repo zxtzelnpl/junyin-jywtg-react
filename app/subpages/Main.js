@@ -7,6 +7,8 @@ import DiskReadBrief from '../containers/DiskReadBrief'
 import NewsInformationBreif from '../containers/NewsInformationBreif'
 import TeacherReportBreif from '../containers/TeacherReportBreif'
 import ProductGameMasterBrief from '../containers/ProductGameMasterBrief'
+import ExchangeGuideBrief from '../containers/ExchangeGuideBrief'
+import SpecialClassBrief from '../containers/SpecialClassBrief'
 import moment from "moment/moment";
 
 export default class Main extends React.Component{
@@ -35,6 +37,8 @@ export default class Main extends React.Component{
           </div>
           <StockIndex />
           <div className="blank_20" />
+          <ExchangeGuideBrief />
+          <div className="blank_20" />
           <DiskReadBrief />
           <div className="blank_20" />
           <ProductGameMasterBrief />
@@ -42,6 +46,8 @@ export default class Main extends React.Component{
           <NewsInformationBreif />
           <div className="blank_20" />
           <TeacherReportBreif />
+          <div className="blank_20" />
+          <SpecialClassBrief />
         </div>
     )
   }

@@ -1,4 +1,4 @@
-import * as actionTypes from '../constants/news'
+import * as actionTypes from '../constants/specialClass'
 
 export const initialState = {
   isFetching: false,
@@ -6,20 +6,20 @@ export const initialState = {
   data: []
 }
 
-export default function news(state = initialState, action) {
+export default function specialClass(state = initialState, action) {
   switch (action.type) {
-    case actionTypes.NEWS_REQUEST_JSONP:
+    case actionTypes.SPECIALCLASS_REQUEST_JSONP:
       return {
         ...state,
         isFetching:true
       }
-    case actionTypes.NEWS_RECEIVED:
+    case actionTypes.SPECIALCLASS_RECEIVED:
       return {
         data:state.data.concat(action.data),
         receivedAt:action.receivedAt,
         isFetching:false
       }
-    case actionTypes.NEWS_ERROR:
+    case actionTypes.SPECIALCLASS_ERROR:
       return {
         ...state,
         isFetching: false
