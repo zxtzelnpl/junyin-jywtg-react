@@ -3,14 +3,9 @@ import React from 'react'
 import {public_resource} from "../constants/urls";
 import moment from "moment/moment";
 
-class Item extends React.Component {
+class Item extends React.PureComponent {
   constructor(props) {
     super(props)
-    this.img={
-      pmdj_mg:`${public_resource}/pmdj_item.jpg`,
-      ydfp_mg:`${public_resource}/ydfp_item.jpg`,
-      yxzzz_mg:`${public_resource}/yxzzz_item.jpg`
-    }
   }
 
   render() {

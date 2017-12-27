@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import {public_resource} from "../constants/urls";
 import moment from "moment/moment";
 
-export default class VideoBrief extends React.Component {
+export default class VideoBrief extends React.PureComponent {
   constructor(props) {
     super(props)
     this.img = {
