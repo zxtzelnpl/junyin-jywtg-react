@@ -12,7 +12,6 @@ export const initialState = {
 }
 
 export default function specialClass(state = initialState, action) {
-  console.log(state)
   switch (action.type) {
     case actionTypes.SPECIALCLASS_REQUEST_JSONP:
       return {

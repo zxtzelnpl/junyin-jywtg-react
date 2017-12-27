@@ -1,4 +1,4 @@
-import './ExchangeGuide.less'
+import './Video.less'
 import React from 'react'
 import {public_resource} from "../constants/urls";
 import moment from "moment/moment";
@@ -11,7 +11,7 @@ class Item extends React.Component {
   render() {
     let {video_cover, video_path, timestamp, title} = this.props
     return (
-        <div className="ExchangeGuideItem">
+        <div className="VideoItem">
           <video
               src={video_path}
               poster={video_cover}
@@ -26,7 +26,7 @@ class Item extends React.Component {
   }
 }
 
-export default class ExchangeGuide extends React.Component{
+export default class Video extends React.Component{
   constructor(props){
     super(props)
     this.head_img = `${public_resource}/exchange_guide_head.jpg`
@@ -85,7 +85,7 @@ export default class ExchangeGuide extends React.Component{
     })
 
     return(
-        <div className="ExchangeGuide" ref={wrap=>{this.wrap = wrap}}>
+        <div className="Video" ref={wrap=>{this.wrap = wrap}}>
           <div className="title">
             <img src={this.head_img} alt=""/>
           </div>

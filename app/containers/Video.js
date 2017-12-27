@@ -1,7 +1,7 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import ExchangeGuideBrief from '../components/ExchangeGuideBrief'
+import Video from '../components/Video'
 import * as exchangeGuideActionsFromOtherFile from '../actions/exchangeGuide'
 
 function mapStateToProps(state) {
@@ -19,4 +19,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(ExchangeGuideBrief)
+)(Video)
