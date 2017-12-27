@@ -51,7 +51,12 @@ export default class SpecialClassBrief extends React.Component{
         <div className="SpecialClassBrief">
           <p className="title">
             <span><img src={img_title}/>技术课程</span>
-            <Link to="/SpecialClass"><img src={img_detail} alt=""/></Link>
+            <Link to={
+              {
+                pathname:'VideosPage',
+                state:'special'
+              }
+            }><img src={img_detail} alt=""/></Link>
           </p>
           <div className="wrap">
             {htmlDom}

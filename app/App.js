@@ -10,6 +10,7 @@ import Login from './containers/Login'
 import Center from './containers/Center'
 import Main from './subpages/Main'
 import NewsPage from './subpages/NewsPage'
+import VideosPage from './subpages/VideosPage'
 import Footer from './containers/Footer'
 import ProductGameMaster from './containers/ProductGameMaster'
 import ProductGameMasterList from './containers/ProductGameMasterList'
@@ -36,8 +37,7 @@ const App = () => {
         <Route path="/Center" component={Center}/>
         <Route path="/ProductGameMaster" component={ProductGameMaster}/>
         <Route path="/ProductGameMasterList" component={ProductGameMasterList}/>
-        <Route path="/Video" component={Video}/>
-        <Route path="/SpecialClass" component={SpecialClass}/>
+        <Route path="/VideosPage" component={VideosPage}/>
         <Route path="/SpecialClassList/:teacher" component={SpecialClassList}/>
         <Footer/>
       </div>

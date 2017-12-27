@@ -45,7 +45,7 @@ export default class Video extends React.PureComponent{
     super(props)
     this.head_img = `${public_resource}/exchange_guide_head.jpg`
     this.checkLoading=this.checkLoading.bind(this)
-    let show = this.props.location.state||'pmdj'
+    let show = this.props.show||'pmdj'
     this.state={
       show:show
     }
@@ -106,7 +106,7 @@ export default class Video extends React.PureComponent{
 
     return(
         <div className="Video" ref={wrap=>{this.wrap = wrap}}>
-          <div className="tabHead">
+          <div className="nav">
             <ul onClick={this.onClick.bind(this)}>
               <li className={show==='pmdj'?'active':'normal'}>盘面点金</li>
               <li className="line"/>

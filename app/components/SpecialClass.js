@@ -79,9 +79,6 @@ export default class SpecialClass extends React.Component {
 
     return (
         <div className="SpecialClass">
-          <div className="title">
-            技术课程
-          </div>
           <div className="wrap">
             {htmlDom}
           </div>

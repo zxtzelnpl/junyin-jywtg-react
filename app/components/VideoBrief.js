@@ -19,15 +19,15 @@ export default class VideoBrief extends React.PureComponent {
     }
     this.url={
       pmdj:{
-        pathname:'/Video',
+        pathname:'/VideosPage',
         state:'pmdj'
       },
       ydfp:{
-        pathname:'/Video',
+        pathname:'/VideosPage',
         state:'ydfp'
       },
       yxzzd:{
-        pathname:'/Video',
+        pathname:'/VideosPage',
         state:'yxzzd'
       }
     }
@@ -56,7 +56,7 @@ export default class VideoBrief extends React.PureComponent {
         <div className="VideoBrief">
           <p className="title">
             <span><img src={title}/>君银直播</span>
-            <Link to="/Video"><img src={detail} alt=""/></Link>
+            <Link to={{pathname:'/VideosPage',state:'pmdj'}}><img src={detail} alt=""/></Link>
           </p>
           <div className="wrap">
             <ul>

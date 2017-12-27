@@ -83,7 +83,7 @@ class Footer extends React.PureComponent {
       footer_main_color = "black"
     }
 
-    if (pathname === 'Video') {
+    if (pathname === 'VideosPage') {
       footer_user_png = this.img.video_a
       footer_user_color = "red"
     }
@@ -144,7 +144,7 @@ class Footer extends React.PureComponent {
                 <span style={{"color": footer_product_color}}>微投顾</span>
               </div>
             </Link>
-            <Link to="/Video">
+            <Link to="/VideosPage">
               <div>
                 <img src={footer_user_png} alt=""/>
                 <span style={{"color": footer_user_color}}>视频</span>
