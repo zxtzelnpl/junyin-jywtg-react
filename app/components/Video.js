@@ -34,7 +34,7 @@ export default class Video extends React.Component{
   }
 
   componentDidMount(){
-    if (this.props.exchangeGuide.data.length === 0) {
+    if (this.props.disk.data.length === 0) {
 
       let value = {
         limit: 10,
@@ -42,7 +42,7 @@ export default class Video extends React.Component{
         query_end_stamp: moment().format('X')
       }
 
-      this.props.exchangeGuideActions.fetchPostsIfNeeded(value)
+      this.props.diskActions.fetchPostsIfNeeded(value)
     }
     document.addEventListener('scroll',this.checkLoading)
   }
@@ -60,7 +60,7 @@ export default class Video extends React.Component{
   }
 
   add() {
-    let datas = this.props.exchangeGuide.data
+    let datas = this.props.disk.data
     let len = datas.length
     if (len > 0) {
       let last = datas[len - 1]
@@ -72,14 +72,14 @@ export default class Video extends React.Component{
         query_start_stamp: query_start_stamp,
         query_end_stamp: query_end_stamp
       }
-      this.props.exchangeGuideActions.fetchPostsIfNeeded(value)
+      this.props.diskActions.fetchPostsIfNeeded(value)
     }
   }
 
   render(){
-    let data = this.props.exchangeGuide.data
+    let data = this.props.disk.data
     let loading_img = `${public_resource}/loading.png`
-    let loadingShow = this.props.exchangeGuide.isFetching?'visible':'hidden'
+    let loadingShow = this.props.disk.isFetching?'visible':'hidden'
     let htmlDom = data.map(item=>{
       return (<Item key={item.id} {...item}/>)
     })
