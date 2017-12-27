@@ -106,9 +106,6 @@ export default class Video extends React.Component{
 
     return(
         <div className="Video" ref={wrap=>{this.wrap = wrap}}>
-          <div className="title">
-            <img src={this.head_img} alt=""/>
-          </div>
           <div className="tabHead">
             <ul onClick={this.onClick.bind(this)}>
               <li className={show==='pmdj'?'active':'normal'}>盘面点金</li>
