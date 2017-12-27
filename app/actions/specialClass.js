@@ -21,10 +21,10 @@ const receivedError = () => ({
 
 const fetchPosts = value => dispatch => {
   dispatch(requestPosts())
-  let {limit,query_start_stamp,query_end_stamp} = value
+  let {query_start_stamp,query_end_stamp} = value
   let now_stamp = moment().format('X')
   let key = hex_md5(apiKey+now_stamp)
-  let url = `${special_class}?now_stamp=${now_stamp}&key=${key}&limit=${limit}&query_start_stamp=${query_start_stamp}&query_end_stamp=${query_end_stamp}`
+  let url = `${special_class}?now_stamp=${now_stamp}&key=${key}&limit=999&query_start_stamp=${query_start_stamp}&query_end_stamp=${query_end_stamp}`
 
   return fetchJsonp(url)
       .then(response => response.json())
@@ -47,8 +47,8 @@ const shouldFetchPosts = (state) => {
   return !state.specialClass.isFetching;
 }
 
-export const fetchPostsIfNeeded = value => (dispatch, getState) => {
+export const fetchPostsIfNeeded = () => (dispatch, getState) => {
   if (shouldFetchPosts(getState())) {
-    return dispatch(fetchPosts(value))
+    return dispatch(fetchPosts(getState().specialClass))
   }
 }

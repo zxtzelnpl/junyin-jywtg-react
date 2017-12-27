@@ -1,8 +1,8 @@
 import './SpecialClassBrief.less'
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {public_resource} from "../constants/urls";
-import moment from "moment/moment";
+import {public_resource} from "../constants/urls"
+import moment from "moment/moment"
 import teachers from '../constants/teacher'
 
 class Item extends React.Component{
@@ -32,14 +32,7 @@ export default class SpecialClassBrief extends React.Component{
 
   componentDidMount(){
     if (this.props.specialClass.data.length === 0) {
-
-      let value = {
-        limit: 40,
-        query_start_stamp: 0,
-        query_end_stamp: moment().format('X')
-      }
-
-      this.props.specialClassActions.fetchPostsIfNeeded(value)
+      this.props.specialClassActions.fetchPostsIfNeeded()
     }
   }
 

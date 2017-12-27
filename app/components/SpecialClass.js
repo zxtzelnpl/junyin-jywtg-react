@@ -52,13 +52,6 @@ export default class SpecialClass extends React.Component {
 
   componentDidMount() {
     if (this.props.specialClass.data.length === 0) {
-
-      let value = {
-        limit: 40,
-        query_start_stamp: 0,
-        query_end_stamp: moment().format('X')
-      }
-
       this.props.specialClassActions.fetchPostsIfNeeded(value)
     }
   }

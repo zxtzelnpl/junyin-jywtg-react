@@ -37,13 +37,7 @@ export default class SpecialClassList extends React.Component {
 
   componentDidMount() {
     if (this.props.specialClass.data.length === 0) {
-      let value = {
-        limit: 40,
-        query_start_stamp: 0,
-        query_end_stamp: moment().format('X')
-      }
-
-      this.props.specialClassActions.fetchPostsIfNeeded(value)
+      this.props.specialClassActions.fetchPostsIfNeeded()
     }
 
     document.addEventListener('scroll',this.checkLoading)
@@ -62,20 +56,7 @@ export default class SpecialClassList extends React.Component {
   }
 
   add() {
-    let datas = this.props.specialClass.data
-    let len = datas.length
-    if (len > 0) {
-      let last = datas[len - 1]
-      let query_start_stamp = 0;
-      let query_end_stamp = last.timestamp
-
-      let value = {
-        limit: 5,
-        query_start_stamp: query_start_stamp,
-        query_end_stamp: query_end_stamp
-      }
-      this.props.specialClassActions.fetchPostsIfNeeded(value)
-    }
+    this.props.specialClassActions.fetchPostsIfNeeded()
   }
 
   render() {
