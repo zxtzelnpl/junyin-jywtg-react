@@ -4,7 +4,7 @@ import './ProductGameMasterList.less'
 import {public_resource} from "../constants/urls";
 import moment from 'moment'
 
-export default class ProductGameMasterList extends React.Component {
+export default class ProductGameMasterList extends React.PureComponent {
 
   componentDidMount(){
     if(this.props.record.data.length===0&&!this.props.record.receive){

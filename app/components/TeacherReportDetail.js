@@ -2,7 +2,7 @@ import React from 'react'
 import moment from "moment/moment";
 import './TeacherReportDetail.less'
 
-export default class TeacherReportDetail extends React.Component{
+export default class TeacherReportDetail extends React.PureComponent{
   constructor(props){
     super(props)
     this.id = this.props.match.params.id

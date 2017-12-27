@@ -15,7 +15,7 @@ import product_a from '../static/img/footer/product_a.png'
 import video from '../static/img/footer/video.png'
 import video_a from '../static/img/footer/video_a.png'
 
-class Footer extends React.Component {
+class Footer extends React.PureComponent {
   constructor(props) {
     super(props)
     this.img = {

@@ -39,7 +39,7 @@ class Item extends React.PureComponent {
   }
 }
 
-export default class Video extends React.Component{
+export default class Video extends React.PureComponent{
   constructor(props){
     console.log(props)
     super(props)

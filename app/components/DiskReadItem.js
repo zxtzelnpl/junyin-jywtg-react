@@ -2,7 +2,7 @@ import React from 'react'
 import moment from 'moment'
 import './DiskReadItem.less'
 
-export default class DiskItem extends React.Component{
+export default class DiskItem extends React.PureComponent{
   constructor(props){
     super(props)
   }

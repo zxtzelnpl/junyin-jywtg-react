@@ -3,7 +3,7 @@ import moment from 'moment'
 import TeacherItem from './TeacherReportItem'
 import {public_resource} from "../constants/urls";
 import './TeacherReport.less'
-export default class TeacherReport extends React.Component{
+export default class TeacherReport extends React.PureComponent{
   constructor(props){
     super(props)
     this.checkLoading=this.checkLoading.bind(this)

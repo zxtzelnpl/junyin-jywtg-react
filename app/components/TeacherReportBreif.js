@@ -4,7 +4,7 @@ import moment from 'moment'
 import TeacherItem from './TeacherReportItem'
 import {public_resource} from "../constants/urls";
 import './TeacherReportBreif.less'
-export default class TeacherReportBreif extends React.Component{
+export default class TeacherReportBreif extends React.PureComponent{
   constructor(props){
     super(props)
     this.linkUrl={

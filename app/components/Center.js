@@ -3,7 +3,7 @@ import User from './User'
 import Login from './Login'
 import moment from "moment/moment";
 
-export default class Center extends React.Component {
+export default class Center extends React.PureComponent {
   render(){
     let {check,receivedAt} = this.props.user
     if(check&&moment().isBefore(moment.unix(receivedAt).add(1,'days'))){

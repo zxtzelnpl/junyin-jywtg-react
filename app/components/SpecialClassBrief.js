@@ -5,7 +5,7 @@ import {public_resource} from "../constants/urls"
 import moment from "moment/moment"
 import teachers from '../constants/teacher'
 
-class Item extends React.Component{
+class Item extends React.PureComponent{
   constructor(props){
     super(props)
   }

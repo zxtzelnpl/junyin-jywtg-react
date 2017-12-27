@@ -2,7 +2,7 @@ import React from 'react'
 import './StockIndex.less'
 
 
-class StockIndexItem extends React.Component {
+class StockIndexItem extends React.PureComponent {
   render() {
     let arr = this.props.str.split(',')
     let name = arr[0]

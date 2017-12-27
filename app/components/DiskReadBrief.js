@@ -5,7 +5,7 @@ import moment from 'moment'
 import DiskItem from './DiskReadItem'
 import {public_resource} from "../constants/urls";
 
-export default class DiskReadBrief extends React.Component {
+export default class DiskReadBrief extends React.PureComponent {
   constructor(props) {
     super(props)
   }

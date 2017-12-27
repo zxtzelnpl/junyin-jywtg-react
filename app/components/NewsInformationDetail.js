@@ -2,7 +2,7 @@ import React from 'react'
 import moment from 'moment'
 import './NewsInformationDetail.less'
 
-export default class NewsInformationDetail extends React.Component {
+export default class NewsInformationDetail extends React.PureComponent {
   constructor(props) {
     super(props)
     this.id = this.props.match.params.id

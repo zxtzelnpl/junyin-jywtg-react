@@ -5,7 +5,7 @@ import './NewsInformationBreif.less'
 import NewsItem from './NewsInformationItem'
 import {public_resource} from "../constants/urls";
 
-export default class NewsInformation extends React.Component {
+export default class NewsInformation extends React.PureComponent {
   constructor(props) {
     super(props)
   }

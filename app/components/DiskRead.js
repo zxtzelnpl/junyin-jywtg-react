@@ -4,7 +4,7 @@ import moment from 'moment'
 import DiskItem from './DiskReadItem'
 import {public_resource} from "../constants/urls";
 
-export default class DiskRead extends React.Component {
+export default class DiskRead extends React.PureComponent {
   constructor(props) {
     super(props)
     this.checkLoading=this.checkLoading.bind(this)

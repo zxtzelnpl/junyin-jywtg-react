@@ -4,7 +4,7 @@ import moment from 'moment'
 import {Link} from "react-router-dom";
 import {public_resource} from "../constants/urls";
 
-export default class TeacherItem extends React.Component{
+export default class TeacherItem extends React.PureComponent{
   render(){
     let {id,central_idea,title,timestamp} = this.props
     let url=`/TeacherReportDetail/${id}`

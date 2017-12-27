@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import moment from "moment/moment";
 import './NewsInformationItem.less'
 
-export default class NewsItem extends React.Component{
+export default class NewsItem extends React.PureComponent{
   render(){
     let {ID, Title, UEditTime} = this.props
     let url = `/NewsInformationDetail/${ID}`
