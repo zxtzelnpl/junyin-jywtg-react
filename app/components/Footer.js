@@ -99,54 +99,51 @@ class Footer extends React.Component {
       footer_product_color = "black"
     }
 
-    if(pathname === "Center"){
-      right_fix_display={"display":"none"}
+    if (pathname === "Center") {
+      right_fix_display = {"display": "none"}
     }
 
     return (
-        this.props.button.write ?
-            <div/> :
-            <div>
-              <footer>
-                <Link to="/Main">
-                  <div>
-                    <img src={footer_main_png} alt=""/>
-                    <span style={{"color": footer_main_color}}>首页</span>
-                  </div>
-                </Link>
-                <Link to="/DiskRead">
-                  <div>
-                    <img src={footer_disk_png} alt=""/>
-                    <span style={{"color": footer_disk_color}}>解盘</span>
-                  </div>
-                </Link>
-                <Link to="/ProductGameMaster">
-                  <div>
-                    <img src={footer_product_png} alt=""/>
-                    <span style={{"color": footer_product_color}}>微投顾</span>
-                  </div>
-                </Link>
-                <Link to="/Video">
-                  <div>
-                    <img src={footer_user_png} alt=""/>
-                    <span style={{"color": footer_user_color}}>视频</span>
-                  </div>
-                </Link>
-                <Link to="/NewsPage">
-                  <div>
-                    <img src={footer_news_png} alt=""/>
-                    <span style={{"color": footer_news_color}}>资讯</span>
-                  </div>
-                </Link>
-              </footer>
-
-              <div className="right_fix" style={right_fix_display}>
-                <Link to="/Center">
-                  <img src={this.img.right_fix} alt=""/>
-                </Link>
+        <div>
+          <footer>
+            <Link to="/Main">
+              <div>
+                <img src={footer_main_png} alt=""/>
+                <span style={{"color": footer_main_color}}>首页</span>
               </div>
-            </div>
+            </Link>
+            <Link to="/DiskRead">
+              <div>
+                <img src={footer_disk_png} alt=""/>
+                <span style={{"color": footer_disk_color}}>解盘</span>
+              </div>
+            </Link>
+            <Link to="/ProductGameMaster">
+              <div>
+                <img src={footer_product_png} alt=""/>
+                <span style={{"color": footer_product_color}}>微投顾</span>
+              </div>
+            </Link>
+            <Link to="/Video">
+              <div>
+                <img src={footer_user_png} alt=""/>
+                <span style={{"color": footer_user_color}}>视频</span>
+              </div>
+            </Link>
+            <Link to="/NewsPage">
+              <div>
+                <img src={footer_news_png} alt=""/>
+                <span style={{"color": footer_news_color}}>资讯</span>
+              </div>
+            </Link>
+          </footer>
 
+          <div className="right_fix" style={right_fix_display}>
+            <Link to="/Center">
+              <img src={this.img.right_fix} alt=""/>
+            </Link>
+          </div>
+        </div>
     )
   }
 }
