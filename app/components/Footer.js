@@ -18,7 +18,7 @@ class Footer extends React.Component {
       product_a: `${public_resource}/footer/product_a.png`,
       video: `${public_resource}/footer/video.png`,
       video_a: `${public_resource}/footer/video_a.png`,
-      right_fix: `${public_resource}/right_fix.jpg`
+      right_fix: `${public_resource}/right_fix.png`
     }
   }
 
@@ -28,7 +28,6 @@ class Footer extends React.Component {
   }
 
   componentDidUpdate() {
-    this.checkLogin()
     window.scrollTo(0, 0)
   }
 
@@ -43,6 +42,9 @@ class Footer extends React.Component {
       alert('登录信息已经失效')
       return this.props.history.replace('/Center')
     }
+    else{
+
+    }
   }
 
   render() {
@@ -54,6 +56,12 @@ class Footer extends React.Component {
         footer_product_png, footer_product_color,
         right_fix_display
     ;
+
+    let {check, receivedAt} = this.props.user
+    if(!check||moment().isAfter(moment.unix(receivedAt).add(1, 'days'))){
+      return (<div />)
+    }
+
     if (pathname === 'Main') {
       footer_main_png = this.img.main_a
       footer_main_color = "red"
