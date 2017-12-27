@@ -5,23 +5,40 @@ import './Footer.less'
 import moment from "moment/moment";
 
 class Footer extends React.Component {
-  componentDidMount(){
+  constructor(props) {
+    super(props)
+    this.img = {
+      main: `${public_resource}/footer/main.png`,
+      main_a: `${public_resource}/footer/main_a.png`,
+      disk: `${public_resource}/footer/disk.png`,
+      disk_a: `${public_resource}/footer/disk_a.png`,
+      news: `${public_resource}/footer/news.png`,
+      news_a: `${public_resource}/footer/news_a.png`,
+      product: `${public_resource}/footer/product.png`,
+      product_a: `${public_resource}/footer/product_a.png`,
+      video: `${public_resource}/footer/video.png`,
+      video_a: `${public_resource}/footer/video_a.png`,
+    }
+  }
+
+
+  componentDidMount() {
     this.checkLogin()
   }
 
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.checkLogin()
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0)
   }
 
-  checkLogin(){
+  checkLogin() {
     let pathname = this.props.location.pathname.slice(1);
-    let {check,receivedAt} = this.props.user
-    if(!check&&pathname !== 'Center'){
+    let {check, receivedAt} = this.props.user
+    if (!check && pathname !== 'Center') {
       alert('需要登录后方可观看')
       return this.props.history.replace('/Center')
     }
-    if(moment().isAfter(moment.unix(receivedAt).add(1,'days'))&&pathname !== 'Center'){
+    if (moment().isAfter(moment.unix(receivedAt).add(1, 'days')) && pathname !== 'Center') {
       alert('登录信息已经失效')
       return this.props.history.replace('/Center')
     }
@@ -35,47 +52,47 @@ class Footer extends React.Component {
         footer_news_png, footer_news_color,
         footer_product_png, footer_product_color;
     if (pathname === 'Main') {
-      footer_main_png = `${public_resource}/footer/main_a.png`
+      footer_main_png = this.img.main_a
       footer_main_color = "red"
     }
     else {
-      footer_main_png = `${public_resource}/footer/main.png`
+      footer_main_png = this.img.main
       footer_main_color = "black"
     }
 
-    if (pathname === 'Center') {
-      footer_user_png = `${public_resource}/footer/user_a.png`
+    if (pathname === 'Video') {
+      footer_user_png = this.img.video_a
       footer_user_color = "red"
     }
     else {
-      footer_user_png = `${public_resource}/footer/user.png`
+      footer_user_png = this.img.video
       footer_user_color = "black"
     }
 
     if (pathname === 'DiskRead') {
-      footer_disk_png = `${public_resource}/footer/disk_a.png`
+      footer_disk_png = this.img.disk_a
       footer_disk_color = "red"
     }
     else {
-      footer_disk_png = `${public_resource}/footer/disk.png`
+      footer_disk_png = this.img.disk
       footer_disk_color = "black"
     }
 
-    if (pathname.indexOf('NewsPage')>-1) {
-      footer_news_png = `${public_resource}/footer/news_a.png`
+    if (pathname==='NewsPage') {
+      footer_news_png = this.img.news_a
       footer_news_color = "red"
     }
     else {
-      footer_news_png = `${public_resource}/footer/news.png`
+      footer_news_png = this.img.news
       footer_news_color = "black"
     }
 
     if (pathname === 'ProductGameMaster') {
-      footer_product_png = `${public_resource}/footer/product_a.png`
+      footer_product_png = this.img.product_a
       footer_product_color = "red"
     }
     else {
-      footer_product_png = `${public_resource}/footer/product.png`
+      footer_product_png = this.img.product
       footer_product_color = "black"
     }
 
