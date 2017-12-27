@@ -80,7 +80,7 @@ export default class SpecialClass extends React.Component {
     return (
         <div className="SpecialClass">
           <div className="title">
-            <img src={this.head_img} alt=""/>
+            技术课程
           </div>
           <div className="wrap">
             {htmlDom}
