@@ -78,7 +78,7 @@ class Footer extends React.Component {
       footer_disk_color = "black"
     }
 
-    if (pathname==='NewsPage') {
+    if (pathname === 'NewsPage') {
       footer_news_png = this.img.news_a
       footer_news_color = "red"
     }
@@ -118,16 +118,16 @@ class Footer extends React.Component {
                   <span style={{"color": footer_product_color}}>微投顾</span>
                 </div>
               </Link>
-              <Link to="/NewsPage/news">
+              <Link to="/Video">
+                <div>
+                  <img src={footer_user_png} alt=""/>
+                  <span style={{"color": footer_user_color}}>视频</span>
+                </div>
+              </Link>
+              <Link to="/NewsPage">
                 <div>
                   <img src={footer_news_png} alt=""/>
                   <span style={{"color": footer_news_color}}>资讯</span>
-                </div>
-              </Link>
-              <Link to="/Center">
-                <div>
-                  <img src={footer_user_png} alt=""/>
-                  <span style={{"color": footer_user_color}}>我的</span>
                 </div>
               </Link>
             </footer>

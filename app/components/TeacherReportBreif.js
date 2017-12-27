@@ -7,6 +7,10 @@ import './TeacherReportBreif.less'
 export default class TeacherReportBreif extends React.Component{
   constructor(props){
     super(props)
+    this.linkUrl={
+      pathname:'/NewsPage',
+      state:'teacher'
+    }
   }
 
   componentDidMount(){
@@ -37,7 +41,7 @@ export default class TeacherReportBreif extends React.Component{
         <div className="TeacherReportBreif">
           <p className="title">
             <span><img src={teacher_img} />君银内参</span>
-            <Link to="/NewsPage/teacher"><img src={detail_img} alt=""/></Link>
+            <Link to={this.linkUrl}><img src={detail_img} alt=""/></Link>
           </p>
           <div>
             {htmlDom}

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route,Redirect,Link} from 'react-router-dom'
+import {Route, Redirect, Link} from 'react-router-dom'
 import DiskRead from './containers/DiskRead'
 import NewsInformation from './containers/NewsInformation'
 import NewsInformationDetail from './containers/NewsInformationDetail'
@@ -20,12 +20,12 @@ import SpecialClassList from './containers/SpecialClassList'
 
 import './static/css/app.less'
 
-const App = ()=>{
-  return(
+const App = () => {
+  return (
       <div className="container">
-        <Route exact path="/" render={()=>(<Redirect to="/Center"/>)}/>
+        <Route exact path="/" render={() => (<Redirect to="/Center"/>)}/>
         <Route path="/Main" component={Main}/>
-        <Route path="/NewsPage/:mark" component={NewsPage}/>
+        <Route path="/NewsPage" component={NewsPage}/>
         <Route path="/DiskRead" component={DiskRead}/>
         <Route path="/NewsInformation" component={NewsInformation}/>
         <Route path="/NewsInformationDetail/:id" component={NewsInformationDetail}/>
@@ -39,7 +39,7 @@ const App = ()=>{
         <Route path="/Video" component={Video}/>
         <Route path="/SpecialClass" component={SpecialClass}/>
         <Route path="/SpecialClassList/:teacher" component={SpecialClassList}/>
-        <Footer />
+        <Footer/>
       </div>
   )
 }

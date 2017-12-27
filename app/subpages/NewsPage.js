@@ -9,7 +9,7 @@ export default class NewsPage extends React.Component{
   constructor(props){
     super(props)
     this.state={
-      show:props.match.params.mark
+      show:props.location.state||'news'
     }
     this.img={
       teacher:`${public_resource}/teacher_report_head.jpg`,
