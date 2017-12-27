@@ -61,8 +61,7 @@ export default class DiskReadBrief extends React.PureComponent {
             <span><img src={disk_img}/>实盘解读</span>
             <Link to="/DiskRead"><img src={detail_img} alt=""/></Link>
           </p>
-          <div>{htmlDom}</div>
-
+          <div className="wrap">{htmlDom}</div>
         </div>
     )
   }
