@@ -3,10 +3,9 @@ import {public_resource} from "../constants/urls";
 import {Link} from 'react-router-dom'
 import './User.less'
 
-export default class User extends React.Component {
+export default class User extends React.PureComponent {
   render() {
     let banner = `${public_resource}/userBg.jpg`
-    let user_test = `${public_resource}/user_test.jpg`
     let serviceTime = `${public_resource}/serviceTime.jpg`
     let productCenter = `${public_resource}/productCenter.jpg`
     let aboutUs = `${public_resource}/aboutUs.jpg`

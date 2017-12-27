@@ -3,7 +3,7 @@ import {public_resource} from "../constants/urls";
 import {trim, phoneCheck} from '../static/js/tools'
 import './Login.less'
 
-export default class Login extends React.Component {
+export default class Login extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
@@ -11,9 +11,6 @@ export default class Login extends React.Component {
       secret: '',
       openid:this.props.user.openid
     }
-    this.inWrite = this.inWrite.bind(this)
-    this.outWrite = this.outWrite.bind(this)
-    this.userInput = this.userInput.bind(this)
     this.height=window.innerHeight-20
   }
 
@@ -39,30 +36,10 @@ export default class Login extends React.Component {
     this.props.userActions.fetchPostsIfNeeded(this.state)
   }
 
-  inWrite() {
-    this.props.buttonActions.writeChange(true)
-  }
-
-  outWrite() {
-    this.props.buttonActions.writeChange(false)
-  }
-
   componentDidMount(){
-    this.checkHight = setInterval(this.userInput,1000)
   }
 
   componentWillUnmount(){
-    this.outWrite()
-    clearInterval(this.checkHight)
-  }
-
-  userInput(){
-    if(this.height <= window.innerHeight&&this.props.button.write){
-      this.outWrite()
-    }
-    else if(this.height > window.innerHeight&&!this.props.button.write){
-      this.inWrite()
-    }
   }
 
   render() {
