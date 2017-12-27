@@ -16,7 +16,20 @@ export default class VideoBrief extends React.PureComponent {
       yxzzd_sm: `${public_resource}/yxzzd_sm.png`,
       title: `${public_resource}/exchangeGuide.jpg`,
       detail: `${public_resource}/detail.jpg`
-
+    }
+    this.url={
+      pmdj:{
+        pathname:'/Video',
+        state:'pmdj'
+      },
+      ydfp:{
+        pathname:'/Video',
+        state:'ydfp'
+      },
+      yxzzd:{
+        pathname:'/Video',
+        state:'yxzzd'
+      }
     }
   }
 
@@ -48,19 +61,19 @@ export default class VideoBrief extends React.PureComponent {
           <div className="wrap">
             <ul>
               <li className={mark==='pmdj'?'big':''}>
-                <Link to="/Video?mark=pmdj">
+                <Link to={this.url.pmdj}>
                   <img src={mark==='pmdj'?pmdj:pmdj_sm}/>
                   <p>10:00<span>-</span>10:30</p>
                 </Link>
               </li>
               <li className={mark==='ydfp'?'big':''}>
-                <Link to="/Video?mark=ydfp">
-                  <img src={mark==='pmdj'?ydfp:ydfp_sm}/>
+                <Link to={this.url.ydfp}>
+                  <img src={mark==='ydfp'?ydfp:ydfp_sm}/>
                   <p>14:00<span>-</span>14:30</p>
                 </Link>
               </li>
               <li className={mark==='yxzzd'?'big':''}>
-                <Link to="/Video?mark=yxzzd">
+                <Link to={this.url.yxzzd}>
                   <img src={mark==='yxzzd'?yxzzd:yxzzd_sm}/>
                   <p>15:00<span>-</span>15:30</p>
                 </Link>

@@ -16,7 +16,6 @@ export default class DiskItem extends React.Component{
       videoDom = (<video
           src={video_path}
           poster={cover_path}
-          style={{'width': '100%','height': 'auto','maxWidth': '1200px','margin': '0 auto','display': 'block'}}
           controls="false"
       >your browser does not support the video tag</video>)
     }

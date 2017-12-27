@@ -45,8 +45,9 @@ export default class Video extends React.Component{
     super(props)
     this.head_img = `${public_resource}/exchange_guide_head.jpg`
     this.checkLoading=this.checkLoading.bind(this)
+    let show = this.props.location.state||'pmdj'
     this.state={
-      show:'pmdj'
+      show:show
     }
   }
 
