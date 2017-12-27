@@ -12,8 +12,7 @@ export default class NewsPage extends React.Component{
       show:props.location.state||'news'
     }
     this.img={
-      teacher:`${public_resource}/teacher_report_head.jpg`,
-      news:`${public_resource}/news_information_head.jpg`
+
     }
   }
 
@@ -45,12 +44,8 @@ export default class NewsPage extends React.Component{
   render(){
     let show = this.state.show
     let tabContentDom = show === 'news'?<NewsInformation />:<TeacherReport />
-    let img = show === 'news'?this.img.news:this.img.teacher
     return(
         <div className="NewsPage">
-          <div className="title">
-            <img src={img} alt=""/>
-          </div>
           <div className="tabHead">
             <ul onClick={this.onClick.bind(this)}>
               <li className={show==='news'?'active':'normal'}>机构资讯</li>
