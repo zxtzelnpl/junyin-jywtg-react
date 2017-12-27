@@ -6,15 +6,35 @@ import moment from "moment/moment";
 class Item extends React.Component {
   constructor(props) {
     super(props)
+    this.img={
+      pmdj_mg:`${public_resource}/pmdj_item.jpg`,
+      ydfp_mg:`${public_resource}/ydfp_item.jpg`,
+      yxzzz_mg:`${public_resource}/yxzzd_item.jpg`
+    }
   }
 
   render() {
-    let {video_cover, video_path, timestamp, title} = this.props
+    let {video_path, timestamp, title} = this.props
+    let show = this.props.show
+    let reg,img
+    if(show==='pmdj'){
+      reg = /盘面点金/
+      img = this.img.pmdj_mg
+    }
+    if(show==='ydfp'){
+      reg = /异动复盘/
+      img = this.img.ydfp_mg
+    }
+    if(show==='yxzzd'){
+      reg = /优选早知道/
+      img = this.img.yxzzz_mg
+    }
+
     return (
-        <div className="VideoItem">
+        <div className="VideoItem" style={{'display':reg.test(title)?'flex':'none'}}>
           <video
               src={video_path}
-              poster={video_cover}
+              poster={img}
           >您的设备暂不支持此视频
           </video>
           <div>
@@ -31,18 +51,14 @@ export default class Video extends React.Component{
     super(props)
     this.head_img = `${public_resource}/exchange_guide_head.jpg`
     this.checkLoading=this.checkLoading.bind(this)
+    this.state={
+      show:'pmdj'
+    }
   }
 
   componentDidMount(){
     if (this.props.disk.data.length === 0) {
-
-      let value = {
-        limit: 10,
-        query_start_stamp: 0,
-        query_end_stamp: moment().format('X')
-      }
-
-      this.props.diskActions.fetchPostsIfNeeded(value)
+      this.props.diskActions.fetchPostsIfNeeded()
     }
     document.addEventListener('scroll',this.checkLoading)
   }
@@ -60,34 +76,52 @@ export default class Video extends React.Component{
   }
 
   add() {
-    let datas = this.props.disk.data
-    let len = datas.length
-    if (len > 0) {
-      let last = datas[len - 1]
-      let query_start_stamp = 0;
-      let query_end_stamp = last.timestamp
+    this.props.diskActions.fetchPostsIfNeeded()
+  }
 
-      let value = {
-        limit: 5,
-        query_start_stamp: query_start_stamp,
-        query_end_stamp: query_end_stamp
-      }
-      this.props.diskActions.fetchPostsIfNeeded(value)
+  onClick(e){
+    let text = e.target.innerHTML
+    if(text === '盘面点金'){
+      this.setState({
+        show:'pmdj'
+      })
+    }
+    else if(text === '异动复盘'){
+      this.setState({
+        show:'ydfp'
+      })
+    }else if(text === '优选早知道'){
+      this.setState({
+        show:'yxzzd'
+      })
     }
   }
 
   render(){
-    let data = this.props.disk.data
+    let data = this.props.disk.data.filter(item=>{
+      let title = item.title
+      return title.indexOf('盘面点金')>-1||title.indexOf('异动复盘')>-1||title.indexOf('优选早知道')>-1
+    })
     let loading_img = `${public_resource}/loading.png`
     let loadingShow = this.props.disk.isFetching?'visible':'hidden'
     let htmlDom = data.map(item=>{
-      return (<Item key={item.id} {...item}/>)
+      return (<Item key={item.id} {...item} show={this.state.show}/>)
     })
+    let show = this.state.show
 
     return(
         <div className="Video" ref={wrap=>{this.wrap = wrap}}>
           <div className="title">
             <img src={this.head_img} alt=""/>
+          </div>
+          <div className="tabHead">
+            <ul onClick={this.onClick.bind(this)}>
+              <li className={show==='pmdj'?'active':'normal'}>盘面点金</li>
+              <li className="line"/>
+              <li className={show==='ydfp'?'active':'normal'}>异动复盘</li>
+              <li className="line"/>
+              <li className={show==='yxzzd'?'active':'normal'}>优选早知道</li>
+            </ul>
           </div>
           <div className="wrap">
             {htmlDom}
