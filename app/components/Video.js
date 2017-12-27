@@ -9,7 +9,7 @@ class Item extends React.PureComponent {
   }
 
   render() {
-    let {video_path, timestamp, title,cover_picture} = this.props
+    let {video_path, timestamp, title,cover_path} = this.props
     let show = this.props.show
     let reg
     if(show==='pmdj'){
@@ -26,7 +26,7 @@ class Item extends React.PureComponent {
         <div className="VideoItem" style={{'display':reg.test(title)?'flex':'none'}}>
           <video
               src={video_path}
-              poster={cover_picture}
+              poster={cover_path}
               controls="false"
           >您的设备暂不支持此视频
           </video>

@@ -4,20 +4,31 @@ import {public_resource} from "../constants/urls";
 import './Footer.less'
 import moment from "moment/moment";
 
+import main from '../static/img/footer/main.png'
+import main_a from '../static/img/footer/main_a.png'
+import disk from '../static/img/footer/disk.png'
+import disk_a from '../static/img/footer/disk_a.png'
+import news from '../static/img/footer/news.png'
+import news_a from '../static/img/footer/news_a.png'
+import product from '../static/img/footer/product.png'
+import product_a from '../static/img/footer/product_a.png'
+import video from '../static/img/footer/video.png'
+import video_a from '../static/img/footer/video_a.png'
+
 class Footer extends React.Component {
   constructor(props) {
     super(props)
     this.img = {
-      main: `${public_resource}/footer/main.png`,
-      main_a: `${public_resource}/footer/main_a.png`,
-      disk: `${public_resource}/footer/disk.png`,
-      disk_a: `${public_resource}/footer/disk_a.png`,
-      news: `${public_resource}/footer/news.png`,
-      news_a: `${public_resource}/footer/news_a.png`,
-      product: `${public_resource}/footer/product.png`,
-      product_a: `${public_resource}/footer/product_a.png`,
-      video: `${public_resource}/footer/video.png`,
-      video_a: `${public_resource}/footer/video_a.png`,
+      main:main ,
+      main_a:main_a ,
+      disk:disk ,
+      disk_a:disk_a ,
+      news:news ,
+      news_a:news_a ,
+      product:product ,
+      product_a:product_a ,
+      video:video ,
+      video_a:video_a ,
       right_fix: `${public_resource}/right_fix.png`
     }
   }
