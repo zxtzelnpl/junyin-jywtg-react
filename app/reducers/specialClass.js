@@ -1,6 +1,6 @@
 import * as actionTypes from '../constants/specialClass'
 import moment from "moment/moment"
-const dayInterval = 30
+const dayInterval = 15
 
 
 export const initialState = {

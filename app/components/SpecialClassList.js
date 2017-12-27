@@ -16,6 +16,7 @@ class Item extends React.Component {
           <video
               src={video_path}
               poster={cover_picture}
+              controls="false"
           >您的设备暂不支持此视频
           </video>
           <div>

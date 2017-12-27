@@ -9,7 +9,7 @@ class Item extends React.Component {
     this.img={
       pmdj_mg:`${public_resource}/pmdj_item.jpg`,
       ydfp_mg:`${public_resource}/ydfp_item.jpg`,
-      yxzzz_mg:`${public_resource}/yxzzd_item.jpg`
+      yxzzz_mg:`${public_resource}/yxzzz_item.jpg`
     }
   }
 
@@ -35,6 +35,7 @@ class Item extends React.Component {
           <video
               src={video_path}
               poster={img}
+              controls="false"
           >您的设备暂不支持此视频
           </video>
           <div>

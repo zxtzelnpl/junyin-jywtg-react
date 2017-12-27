@@ -1,6 +1,6 @@
 import * as actionTypes from '../constants/disk'
 import moment from "moment/moment";
-const dayInterval = 15
+const dayInterval = 5
 
 export const initialState = {
   isFetching: false,
