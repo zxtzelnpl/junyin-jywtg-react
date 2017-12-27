@@ -48,16 +48,22 @@ export default class VideoBrief extends React.Component {
           <div className="wrap">
             <ul>
               <li className={mark==='pmdj'?'big':''}>
-                <img src={mark==='pmdj'?pmdj:pmdj_sm}/>
-                <p>10:00<span>-</span>10:30</p>
+                <Link to="/Video?mark=pmdj">
+                  <img src={mark==='pmdj'?pmdj:pmdj_sm}/>
+                  <p>10:00<span>-</span>10:30</p>
+                </Link>
               </li>
               <li className={mark==='ydfp'?'big':''}>
-                <img src={mark==='pmdj'?ydfp:ydfp_sm}/>
-                <p>14:00<span>-</span>14:30</p>
+                <Link to="/Video?mark=ydfp">
+                  <img src={mark==='pmdj'?ydfp:ydfp_sm}/>
+                  <p>14:00<span>-</span>14:30</p>
+                </Link>
               </li>
               <li className={mark==='yxzzd'?'big':''}>
-                <img src={mark==='pmdj'?yxzzd:yxzzd_sm}/>
-                <p>15:00<span>-</span>15:30</p>
+                <Link to="/Video?mark=yxzzd">
+                  <img src={mark==='yxzzd'?yxzzd:yxzzd_sm}/>
+                  <p>15:00<span>-</span>15:30</p>
+                </Link>
               </li>
             </ul>
           </div>

@@ -14,27 +14,24 @@ class Item extends React.Component {
   }
 
   render() {
-    let {video_path, timestamp, title} = this.props
+    let {video_path, timestamp, title,cover_picture} = this.props
     let show = this.props.show
-    let reg,img
+    let reg
     if(show==='pmdj'){
       reg = /盘面点金/
-      img = this.img.pmdj_mg
     }
     if(show==='ydfp'){
       reg = /异动复盘/
-      img = this.img.ydfp_mg
     }
     if(show==='yxzzd'){
       reg = /优选早知道/
-      img = this.img.yxzzz_mg
     }
 
     return (
         <div className="VideoItem" style={{'display':reg.test(title)?'flex':'none'}}>
           <video
               src={video_path}
-              poster={img}
+              poster={cover_picture}
               controls="false"
           >您的设备暂不支持此视频
           </video>
@@ -49,6 +46,7 @@ class Item extends React.Component {
 
 export default class Video extends React.Component{
   constructor(props){
+    console.log(props)
     super(props)
     this.head_img = `${public_resource}/exchange_guide_head.jpg`
     this.checkLoading=this.checkLoading.bind(this)
