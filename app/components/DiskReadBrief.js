@@ -1,9 +1,9 @@
+import './DiskReadBrief.less'
 import React from 'react'
 import {Link} from 'react-router-dom'
 import moment from 'moment'
 import DiskItem from './DiskReadItem'
 import {public_resource} from "../constants/urls";
-import './DiskReadBrief.less'
 
 export default class DiskReadBrief extends React.Component {
   constructor(props) {

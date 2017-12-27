@@ -47,14 +47,6 @@ export default class SpecialClassList extends React.Component {
     }
 
     document.addEventListener('scroll',this.checkLoading)
-    if (this.props.specialClass.data.length === 0) {
-      let value = {
-        limit: 40,
-        query_start_stamp: 0,
-        query_end_stamp: moment().format('X')
-      }
-      this.props.specialClassActions.fetchPostsIfNeeded(value)
-    }
   }
 
   componentWillUnmount(){
@@ -91,10 +83,11 @@ export default class SpecialClassList extends React.Component {
       return item.teacher_picture === this.teacher_picture
     })
     let loading_img = `${public_resource}/loading.png`
+    let loadingShow = this.props.specialClass.isFetching?'visible':'hidden'
     let htmlDom = datas.map(item => {
       return (<Item key={item.id} {...item} />)
     })
-    let loadingShow = this.props.specialClass.isFetching?'visible':'hidden'
+
 
     return (
         <div className="SpecialClassList" ref={wrap=>{this.wrap = wrap}}>
