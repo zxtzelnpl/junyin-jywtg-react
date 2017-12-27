@@ -68,7 +68,7 @@ export default class DiskRead extends React.PureComponent {
     return (
         <div className="diskRead" ref={wrap=>{this.wrap=wrap}}>
           <div className="title">
-            <img src={head_img} alt=""/>
+            实盘解读
           </div>
           <div className="wrap">
             <div>
