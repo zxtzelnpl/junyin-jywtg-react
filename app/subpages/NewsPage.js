@@ -1,21 +1,33 @@
-import React from 'react'
 import './NewsPage.less'
+import React from 'react'
 import NewsInformation from '../containers/NewsInformation'
 import TeacherReport from '../containers/TeacherReport'
+import {public_resource} from "../constants/urls";
 import moment from "moment/moment";
 
 export default class NewsPage extends React.Component{
   constructor(props){
     super(props)
     this.state={
-      mark:props.match.params.mark
+      show:props.match.params.mark
+    }
+    this.img={
+      teacher:`${public_resource}/teacher_report_head.jpg`,
+      news:`${public_resource}/news_information_head.jpg`
     }
   }
 
-  onClick(mark){
-    this.setState({
-      mark:mark
-    })
+  onClick(e){
+    let text = e.target.innerHTML
+    if(text==='机构资讯'){
+      this.setState({
+        show:'news'
+      })
+    }else if(text==='君银内参'){
+      this.setState({
+        show:'teacher'
+      })
+    }
   }
 
   componentDidMount(){
@@ -31,20 +43,19 @@ export default class NewsPage extends React.Component{
   }
 
   render(){
-    let mark = this.state.mark
-    let tabContentDom = mark === 'news'?<NewsInformation />:<TeacherReport />
-
+    let show = this.state.show
+    let tabContentDom = show === 'news'?<NewsInformation />:<TeacherReport />
+    let img = show === 'news'?this.img.news:this.img.teacher
     return(
         <div className="NewsPage">
-          <div className="tab_head">
-            <div className="news"
-                 onClick={this.onClick.bind(this,'news')}
-                 style={mark === 'news'?{'color':'red'}:{'color':'gray'}}
-            >机构资讯</div>
-            <div className="teacher"
-                 onClick={this.onClick.bind(this,'teacher')}
-                 style={mark === 'teacher'?{'color':'red'}:{'color':'gray'}}
-            >君银内参</div>
+          <div className="title">
+            <img src={img} alt=""/>
+          </div>
+          <div className="tabHead">
+            <ul onClick={this.onClick.bind(this)}>
+              <li className={show==='news'?'active':'normal'}>机构资讯</li>
+              <li className={show==='teacher'?'active':'normal'}>君银内参</li>
+            </ul>
           </div>
           <div className="tab_content">
             {tabContentDom}

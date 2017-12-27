@@ -1,19 +1,40 @@
 .NewsPage{
-    .tab_head{
-        display:flex;
-        align-items: center;
-        justify-content: center;
-        width:7.5rem;
-        height:1rem;
-        font-size:.40rem;
-        background:#1F143E;
-        >div{
-            width:50%;
-            height:1rem;
+    .title {
+        img {
+            width: 7.5rem;
+            height: 1.45rem;
+        }
+    }
+    .tabHead{
+        ul{
+            display:flex;
+            align-items: center;
+            justify-content: space-around;
+
+            box-sizing: border-box;
+            height:.8rem;
+            border-bottom:1px solid #d2d2d2;
+            background:#fff;
+        }
+        li{
             display:flex;
             align-items: center;
             justify-content: center;
-            color:gray;
+            width:30%;
+            height:100%;
+            font-size:.28rem;
+            &.normal{
+
+            }
+            &.active{
+                color:#e34344;
+                font-weight:bold;
+            }
+            &.line{
+                width:1px;
+                height:.3rem;
+                background:#efefef;
+            }
         }
     }
 }
