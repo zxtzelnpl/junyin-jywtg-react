@@ -53,7 +53,7 @@ export default class SpecialClass extends React.Component {
 
   componentDidMount() {
     if (this.props.specialClass.data.length === 0) {
-      this.props.specialClassActions.fetchPostsIfNeeded(value)
+      this.props.specialClassActions.fetchPostsIfNeeded()
     }
   }
 
