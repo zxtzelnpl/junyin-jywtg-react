@@ -67,17 +67,13 @@ export default class Login extends React.Component {
 
   render() {
     let logo = `${public_resource}/logo.png`
-    let logoDom = <div style={{"marginTop":"60px"}}/>
-    if (!this.props.button.write) {
-      logoDom = <div className="logo">
-        <img src={logo} alt=""/>
-      </div>
-    }
 
     return (
         <div className="Login">
-          {logoDom}
           <div className="form_login">
+            <div className="logo">
+              <img src={logo} alt=""/>
+            </div>
             <div className="phone">
               <input
                   type="number"
