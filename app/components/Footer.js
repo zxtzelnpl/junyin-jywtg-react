@@ -39,7 +39,7 @@ class Footer extends React.Component {
       alert('需要登录后方可观看')
       return this.props.history.replace('/Center')
     }
-    if (moment().isAfter(moment.unix(receivedAt).add(1, 'days')) && pathname !== 'Center') {
+    else if (moment().isAfter(moment.unix(receivedAt).add(1, 'days')) && pathname !== 'Center') {
       alert('登录信息已经失效')
       return this.props.history.replace('/Center')
     }
