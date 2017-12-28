@@ -7,7 +7,7 @@ export default class VideosPage extends React.Component{
   constructor(props){
     super(props)
     this.state={
-      show:props.location.state||'special'
+      show:props.location.state||'pmdj'
     }
     this.img={
 
