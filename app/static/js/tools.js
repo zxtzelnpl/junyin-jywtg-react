@@ -24,3 +24,30 @@ export function getCode() {
   let urlCode = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${AppID}&redirect_uri=${url}&response_type=code&scope=snsapi_base&state=lk#wechat_redirect`
   window.location.href = urlCode
 }
+
+export function isAndroid(){
+  return true
+  let u = navigator.userAgent
+  if(u.indexOf('Android') > -1 || u.indexOf('Adr') > -1){
+    return true
+  }
+  else{
+    return false
+  }
+}
+
+export function videoPollyOpen(e){
+  console.log('open')
+  console.log(e)
+  console.log(e.target)
+  console.log('open')
+  e.target.style='width:100%;height:auto;position:fixed;letf:0;top:50%;transfrom:translateY:(-50%);z-index:2'
+}
+
+export function videoPollyPause(e){
+  console.log('pause')
+  console.log(e)
+  console.log(e.target)
+  console.log('pause')
+  e.target.style=''
+}

@@ -2,6 +2,7 @@ import './SpecialClassBrief.less'
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {public_resource} from "../constants/urls"
+import {isAndroid,videoPollyOpen,videoPollyPause} from '../static/js/tools'
 import moment from "moment/moment"
 import teachers from '../constants/teacher'
 
@@ -11,7 +12,7 @@ class Item extends React.PureComponent{
   }
 
   render(){
-    let {cover_picture,video_path,teacher_picture,timestamp,title} = this.props
+    let {cover_picture,video_path,title} = this.props
     return (
         <div className="SpecialClassBriefItem">
           <video
@@ -21,10 +22,11 @@ class Item extends React.PureComponent{
               style={{
                 'objectFit': 'fill'
               }}
-              playsinline="true"
+              playsInline="true"
               webkit-playsinline="true"
               x5-video-player-type="h5"
               x5-video-player-fullscreen="true"
+              ref={video=>{this.video=video}}
           >您的设备暂不支持此视频</video>
           <p>{title}</p>
         </div>
@@ -42,6 +44,10 @@ export default class SpecialClassBrief extends React.Component{
     if (this.props.specialClass.data.length === 0) {
       this.props.specialClassActions.fetchPostsIfNeeded()
     }
+  }
+
+  componentWillUnmount(){
+
   }
 
   render(){
