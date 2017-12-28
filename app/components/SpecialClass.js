@@ -1,8 +1,8 @@
 import './SpecialClass.less'
 import React from 'react'
 import {Link} from 'react-router-dom'
+import MyVideo from './MyVideo'
 import {public_resource} from "../constants/urls"
-import moment from "moment/moment"
 import {teachers} from '../constants/teachers'
 
 class Item extends React.PureComponent{
@@ -14,18 +14,10 @@ class Item extends React.PureComponent{
     let {cover_picture,video_path,title} = this.props
     return (
         <div className="SpecialClassBriefItem">
-          <video
+          <MyVideo
               src={video_path}
               poster={cover_picture}
-              controls="false"
-              style={{
-                'objectFit': 'fill'
-              }}
-              playsinline="true"
-              webkit-playsinline="true"
-              x5-video-player-type="h5"
-              x5-video-player-fullscreen="true"
-          >您的设备暂不支持此视频</video>
+          />
           <p>{title}</p>
         </div>
     )

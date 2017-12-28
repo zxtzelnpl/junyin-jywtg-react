@@ -1,5 +1,6 @@
 import './Video.less'
 import React from 'react'
+import MyVideo from './MyVideo'
 import {public_resource} from "../constants/urls";
 import moment from "moment/moment";
 
@@ -24,19 +25,10 @@ class Item extends React.PureComponent {
 
     return (
         <div className="VideoItem" style={{'display':reg.test(title)?'flex':'none'}}>
-          <video
+          <MyVideo
               src={video_path}
               poster={cover_path}
-              controls="false"
-              style={{
-                'objectFit': 'fill'
-              }}
-              playsinline="true"
-              webkit-playsinline="true"
-              x5-video-player-type="h5"
-              x5-video-player-fullscreen="true"
-          >您的设备暂不支持此视频
-          </video>
+          />
           <div>
             <p>{title}</p>
             <span>{moment.unix(timestamp).format('YYYY-MM-DD HH:mm:ss')}</span>

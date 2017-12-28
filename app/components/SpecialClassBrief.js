@@ -1,38 +1,23 @@
 import './SpecialClassBrief.less'
 import React from 'react'
 import {Link} from 'react-router-dom'
+import MyVideo from './MyVideo'
 import {public_resource} from "../constants/urls"
-import moment from "moment/moment"
-import teachers from '../constants/teacher'
+
 
 class Item extends React.PureComponent{
   constructor(props){
     super(props)
   }
 
-  componentDidMount(){
-    this.video.addEventListener('',(e)=>{
-
-    })
-  }
-
   render(){
     let {cover_picture,video_path,title} = this.props
     return (
         <div className="SpecialClassBriefItem">
-          <video
+          <MyVideo
               src={video_path}
               poster={cover_picture}
-              controls="false"
-              style={{
-                'object-fit': 'contain'
-              }}
-              plays-inline="true"
-              webkit-playsinline="true"
-              x5-video-player-type="h5"
-              x5-video-player-fullscreen="true"
-              ref={video=>{this.video=video}}
-          >您的设备暂不支持此视频</video>
+          />
           <p>{title}</p>
         </div>
     )

@@ -1,8 +1,8 @@
 import './SpecialClassList.less'
 import React from 'react'
+import MyVideo from './MyVideo'
 import {public_resource} from "../constants/urls";
 import moment from "moment/moment";
-import teachers from '../constants/teacher'
 
 class Item extends React.PureComponent {
   constructor(props) {
@@ -13,19 +13,10 @@ class Item extends React.PureComponent {
     let {cover_picture, video_path, teacher_picture, timestamp, title} = this.props
     return (
         <div className="SpecialClassListItem">
-          <video
+          <MyVideo
               src={video_path}
               poster={cover_picture}
-              controls="false"
-              style={{
-                'objectFit': 'fill'
-              }}
-              playsinline="true"
-              webkit-playsinline="true"
-              x5-video-player-type="h5"
-              x5-video-player-fullscreen="true"
-          >您的设备暂不支持此视频
-          </video>
+          />
           <div>
             <p>{title}</p>
             <span>{moment.unix(timestamp).format('YYYY-MM-DD HH:mm:ss')}</span>

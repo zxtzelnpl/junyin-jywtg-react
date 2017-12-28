@@ -26,7 +26,6 @@ export function getCode() {
 }
 
 export function isAndroid(){
-  return true
   let u = navigator.userAgent
   if(u.indexOf('Android') > -1 || u.indexOf('Adr') > -1){
     return true
@@ -36,18 +35,11 @@ export function isAndroid(){
   }
 }
 
-export function videoPollyOpen(e){
-  console.log('open')
-  console.log(e)
-  console.log(e.target)
-  console.log('open')
-  e.target.style='width:100%;height:auto;position:fixed;letf:0;top:50%;transfrom:translateY:(-50%);z-index:2'
+export function x5Enter(e){
+  let width=window.innerWidth
+  e.target.style='width:'+width+'px;height:auto;transform:translateZ(1%);position:absolute;top:0;left:0;z-index:3;'
 }
 
-export function videoPollyPause(e){
-  console.log('pause')
-  console.log(e)
-  console.log(e.target)
-  console.log('pause')
+export function x5Exit(e){
   e.target.style=''
 }

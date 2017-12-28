@@ -1,38 +1,32 @@
 import React from 'react'
+import MyVideo from './MyVideo'
 import moment from 'moment'
 import './DiskReadItem.less'
 
-export default class DiskItem extends React.PureComponent{
-  constructor(props){
+export default class DiskItem extends React.PureComponent {
+  constructor(props) {
     super(props)
   }
 
-  render(){
-    let videoDom = <div />
-    let pictureDom = <div />
-    let {title,content,timestamp,video_path,cover_path,picture} = this.props
+  render() {
+    let videoDom = <div/>
+    let pictureDom = <div/>
+    let {title, content, timestamp, video_path, cover_path, picture} = this.props
     let timeArr = moment.unix(timestamp).format('MM-DD HH:mm').split(' ')
-    if(video_path!==''){
-      videoDom = (<video
-          src={video_path}
-          poster={cover_path}
-          controls="false"
-          style={{
-            'objectFit': 'fill'
-          }}
-          playsinline="true"
-          webkit-playsinline="true"
-          x5-video-player-type="h5"
-          x5-video-player-fullscreen="true"
-      >your browser does not support the video tag</video>)
+    if (video_path !== '') {
+      videoDom =
+          (<MyVideo
+              src={video_path}
+              poster={cover_path}
+          />)
     }
-    if(picture!==null||picture !== ''){
-      pictureDom=(<img src={picture} />)
+    if (picture !== null || picture !== '') {
+      pictureDom = (<img src={picture}/>)
     }
     return (
         <div className="readItem">
           <div className="read_time">
-            <p>{timeArr[0]}<span className="circle" /></p>
+            <p>{timeArr[0]}<span className="circle"/></p>
             <p>{timeArr[1]}</p>
           </div>
           <div className="read_content_wrap">
