@@ -28,6 +28,13 @@ class Item extends React.PureComponent {
               src={video_path}
               poster={cover_path}
               controls="false"
+              style={{
+                'objectFit': 'fill'
+              }}
+              playsinline="true"
+              webkit-playsinline="true"
+              x5-video-player-type="h5"
+              x5-video-player-fullscreen="true"
           >您的设备暂不支持此视频
           </video>
           <div>

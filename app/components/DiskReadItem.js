@@ -17,6 +17,13 @@ export default class DiskItem extends React.PureComponent{
           src={video_path}
           poster={cover_path}
           controls="false"
+          style={{
+            'objectFit': 'fill'
+          }}
+          playsinline="true"
+          webkit-playsinline="true"
+          x5-video-player-type="h5"
+          x5-video-player-fullscreen="true"
       >your browser does not support the video tag</video>)
     }
     if(picture!==null||picture !== ''){
