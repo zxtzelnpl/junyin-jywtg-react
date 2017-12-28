@@ -2,13 +2,18 @@ import './SpecialClassBrief.less'
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {public_resource} from "../constants/urls"
-import {isAndroid,videoPollyOpen,videoPollyPause} from '../static/js/tools'
 import moment from "moment/moment"
 import teachers from '../constants/teacher'
 
 class Item extends React.PureComponent{
   constructor(props){
     super(props)
+  }
+
+  componentDidMount(){
+    this.video.addEventListener('',(e)=>{
+
+    })
   }
 
   render(){
@@ -20,9 +25,9 @@ class Item extends React.PureComponent{
               poster={cover_picture}
               controls="false"
               style={{
-                'objectFit': 'fill'
+                'object-fit': 'contain'
               }}
-              playsInline="true"
+              plays-inline="true"
               webkit-playsinline="true"
               x5-video-player-type="h5"
               x5-video-player-fullscreen="true"
