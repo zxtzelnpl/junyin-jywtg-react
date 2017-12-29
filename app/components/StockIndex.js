@@ -52,7 +52,7 @@ export default class StockIndex extends React.Component {
       })
     }
     body.appendChild(script)
-    script.src = "http://hq.sinajs.cn/list=s_sh000001,s_sz399001,s_sz399006"
+    script.src = "https://hq.sinajs.cn/list=s_sh000001,s_sz399001,s_sz399006"
     script.id = 'getDate'
   }
 
