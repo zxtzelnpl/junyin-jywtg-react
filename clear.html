@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <style>
+        button{
+            margin:20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="user">
+
+    </div>
+    <button id="btn_user">清楚WXINFO数据</button>
+
+
+</body>
+<script>
+    let user = document.getElementById('user');
+    let btn_userinfo = document.getElementById('btn_user');
+
+    user.innerHTML = localStorage.getItem('user')
+
+
+    btn_userinfo.addEventListener('click',function(){
+      localStorage.removeItem('user')
+      user.innerHTML = localStorage.getItem('user')
+    })
+</script>
+</html>

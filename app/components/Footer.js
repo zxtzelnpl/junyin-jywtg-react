@@ -73,7 +73,7 @@ class Footer extends React.PureComponent {
     ;
 
     let {check, receivedAt} = this.props.user
-    if (!check || moment().isAfter(moment.unix(receivedAt).add(1, 'days'))) {
+    if (!check || moment().isAfter(moment.unix(receivedAt).add(7, 'days'))) {
       return (<div/>)
     }
 
