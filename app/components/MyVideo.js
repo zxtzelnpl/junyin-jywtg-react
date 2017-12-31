@@ -28,7 +28,7 @@ export default class MyVideo extends React.Component {
             poster={poster}
             controls="false"
             style={{
-              'object-fit': 'contain'
+              'objectFit': 'contain'
             }}
             plays-inline="true"
             webkit-playsinline="true"
