@@ -1,0 +1,126 @@
+p {
+  margin: 0;
+}
+html,
+body {
+  background: #eeeeee;
+}
+.container {
+  background: #eeeeee;
+}
+.shadow1 {
+  box-sizing: border-box;
+  line-height: 0;
+  background-color: #d9d9d9;
+  width: 100%;
+  height: 1px;
+}
+.shadow2 {
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  line-height: 0;
+  background-color: #e0e0e0;
+  width: 100%;
+  height: 2px;
+}
+.header {
+  padding: 10px;
+  background: #fff;
+}
+.header .up {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 80px;
+}
+.header .up p:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+}
+.header .up p:first-child span:first-child {
+  font-weight: bold;
+  color: #ce2b32;
+}
+.header .up p:first-child span:last-child {
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+  background: #ce2b32;
+}
+.header .up p:last-child {
+  font-size: 11px;
+  color: gray;
+}
+.header .down {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+}
+.header .down .line {
+  height: 100%;
+  width: 1px;
+  background: #dcdcdc;
+}
+.header .down p {
+  margin: 5px;
+  text-align: center;
+}
+.header .down .num {
+  font-size: 15px;
+  font-weight: bold;
+  color: #ce2b32;
+}
+.header .down .name {
+  font-size: 11px;
+  color: gray;
+}
+.content {
+  font-family: 黑体, serif;
+  padding: 10px;
+  background: #fff;
+}
+.content .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 20px;
+  font-size: 15px;
+  color: #fff;
+  font-weight: bold;
+  background: #c10303;
+}
+.content .word {
+  margin: 20px 0;
+  text-align: justify;
+  font-size: 13px;
+}
+.content .show {
+  padding: 5px;
+  border-radius: 5px;
+  background: #eee;
+}
+.content .show .img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content .show img {
+  display: none;
+  width: 243px;
+  height: 75px;
+}
+.content .show img.choice {
+  display: block;
+}
+.content .show p {
+  margin: 5px 0;
+  font-size: 12px;
+}
+.content .show p.choice {
+  color: red;
+  font-weight: bold;
+}

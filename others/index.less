@@ -1,0 +1,126 @@
+p{
+  margin:0;
+}
+html,body{
+  background:rgb(238,238,238);
+}
+.container{
+  background:rgb(238,238,238);
+}
+.shadow1{
+  box-sizing: border-box;
+  line-height: 0;
+  background-color: rgb(217, 217, 217);
+  width: 100%;
+  height: 1px;
+}
+.shadow2{
+  margin-bottom:20px;
+  box-sizing: border-box;
+  line-height: 0;
+  background-color: rgb(224, 224, 224);
+  width: 100%;
+  height: 2px;
+}
+.header {
+  padding: 10px;
+  background:#fff;
+  .up{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height:80px;
+    p:first-child{
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size:18px;
+      span:first-child{
+        font-weight:bold;
+        color:#ce2b32;
+      }
+      span:last-child{
+        padding:5px;
+        border-radius:5px;
+        color:#fff;
+        background:#ce2b32;
+      }
+    }
+    p:last-child{
+      font-size:11px;
+      color:gray;
+    }
+  }
+  .down{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    height:40px;
+    .line{
+      height:100%;
+      width:1px;
+      background: #dcdcdc;
+    }
+    p{
+      margin:5px;
+      text-align: center;
+    }
+    .num{
+      font-size:15px;
+      font-weight:bold;
+      color:#ce2b32;
+    }
+    .name{
+      font-size:11px;
+      color:gray;
+    }
+  }
+}
+
+.content {
+  font-family: 黑体, serif;
+  padding: 10px;
+  background:#fff;
+  .title{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:80px;
+    height:20px;
+    font-size:15px;
+    color:#fff;
+    font-weight:bold;
+    background:#c10303;
+  }
+  .word{
+    margin:20px 0;
+    text-align: justify;
+    font-size:13px;
+  }
+  .show {
+    padding:5px;
+    border-radius:5px;
+    background:#eee;
+    .img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    img {
+      display:none;
+      width: 243px;
+      height: 75px;
+      &.choice{
+        display:block;
+      }
+    }
+    p{
+      margin:5px 0;
+      font-size:12px;
+      &.choice{
+        color:red;
+        font-weight:bold;
+      }
+    }
+  }
+}
