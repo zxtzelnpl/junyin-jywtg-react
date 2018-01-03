@@ -59,14 +59,18 @@ export default class Video extends React.PureComponent{
 
   componentWillUnmount(){
     document.removeEventListener('scroll',this.checkLoading)
+    clearTimeout(this.timeId)
   }
 
   checkLoading(){
-    let bottom_distance = parseInt(getComputedStyle(this.wrap).paddingBottom)
-    let top = this.loading.getBoundingClientRect().top
-    if(bottom_distance+top<window.innerHeight){
-      this.add()
-    }
+    clearTimeout(this.timeId)
+    this.timeId = setTimeout(()=>{
+      let bottom_distance = parseInt(getComputedStyle(this.wrap).paddingBottom)
+      let top = this.loading.getBoundingClientRect().top
+      if(bottom_distance+top<window.innerHeight){
+        this.add()
+      }
+    },100)
   }
 
   add() {

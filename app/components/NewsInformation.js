@@ -7,11 +7,11 @@ import {public_resource} from "../constants/urls";
 export default class NewsInformation extends React.PureComponent {
   constructor(props) {
     super(props)
-    this.checkLoading=this.checkLoading.bind(this)
+    this.checkLoading = this.checkLoading.bind(this)
   }
 
   componentDidMount() {
-    document.addEventListener('scroll',this.checkLoading)
+    document.addEventListener('scroll', this.checkLoading)
     if (this.props.news.data.length < 20) {
       let value = {
         limit: 20,
@@ -22,30 +22,34 @@ export default class NewsInformation extends React.PureComponent {
     }
   }
 
-  componentWillUnmount(){
-    document.removeEventListener('scroll',this.checkLoading)
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.checkLoading)
+    clearTimeout(this.timeId)
   }
 
-  checkLoading(){
-    let bottom_distance = parseInt(getComputedStyle(this.wrap).paddingBottom)
-    let top = this.loading.getBoundingClientRect().top
-    if(bottom_distance+top<window.innerHeight){
-      this.add()
-    }
+  checkLoading() {
+    clearTimeout(this.timeId)
+    this.timeId = setTimeout(() => {
+      let bottom_distance = parseInt(getComputedStyle(this.wrap).paddingBottom)
+      let top = this.loading.getBoundingClientRect().top
+      if (bottom_distance + top < window.innerHeight) {
+        this.add()
+      }
+    }, 100)
   }
 
-  add(){
+  add() {
     let datas = this.props.news.data
     let len = datas.length
-    if(len>0){
-      let last = datas[len-1]
+    if (len > 0) {
+      let last = datas[len - 1]
       let query_start_stamp = 0;
       let query_end_stamp = moment(last.UEditTime).format('X')
 
       let value = {
-        limit:10,
-        query_start_stamp:query_start_stamp,
-        query_end_stamp:query_end_stamp
+        limit: 10,
+        query_start_stamp: query_start_stamp,
+        query_end_stamp: query_end_stamp
       }
       this.props.newsActions.fetchPostsIfNeeded(value)
 
@@ -67,7 +71,9 @@ export default class NewsInformation extends React.PureComponent {
     }
 
     return (
-        <div className="newsInformation" ref={wrap=>{this.wrap=wrap}}>
+        <div className="newsInformation" ref={wrap => {
+          this.wrap = wrap
+        }}>
           <div className="title">
             <img src={head_img} alt=""/>
           </div>
@@ -75,8 +81,10 @@ export default class NewsInformation extends React.PureComponent {
             <div>
               {htmlDom}
             </div>
-            <div className="loading" ref={loading=>{this.loading=loading}}>
-              <img src={loading_img} />
+            <div className="loading" ref={loading => {
+              this.loading = loading
+            }}>
+              <img src={loading_img}/>
             </div>
           </div>
         </div>
