@@ -56,6 +56,5 @@ export default class MyVideo extends React.Component {
           >您的设备暂不支持此视频</video>
       )
     }
-
   }
 }
