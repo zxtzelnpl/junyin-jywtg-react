@@ -22,7 +22,6 @@ if (typeof __DEV__ !== 'undefined' && __DEV__) {
 
 render(<Loading/>, document.getElementById('root'))
 
-
 function _render(user) {
   let store = configureStore({user})
   store.subscribe(() => {
