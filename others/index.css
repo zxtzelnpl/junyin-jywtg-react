@@ -16,7 +16,7 @@ body {
   height: 1px;
 }
 .shadow2 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   box-sizing: border-box;
   line-height: 0;
   background-color: #e0e0e0;
@@ -37,7 +37,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 18px;
+  font-size: 20px;
 }
 .header .up p:first-child span:first-child {
   font-weight: bold;
@@ -69,7 +69,7 @@ body {
   text-align: center;
 }
 .header .down .num {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: bold;
   color: #ce2b32;
 }
@@ -86,8 +86,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 20px;
+  width: 90px;
+  height: 24px;
   font-size: 15px;
   color: #fff;
   font-weight: bold;
