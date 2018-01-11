@@ -17,7 +17,7 @@ export default class ProductGameMasterList extends React.PureComponent {
     let htmlDom = <div>数据正在加载中</div>
     let data = this.props.record.data
     if(data.length>0){
-      htmlDom = data.map(item=>{
+      htmlDom = data.reverse().map(item=>{
         let {Record_url,Createtime} = item
         let url = `http://${Record_url}`
         return (
