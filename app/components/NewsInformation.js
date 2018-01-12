@@ -2,16 +2,16 @@ import React from 'react'
 import moment from 'moment'
 import './NewsInformation.less'
 import NewsItem from './NewsInformationItem'
-import {public_resource} from "../constants/urls";
+import LoadControl from './LoadControl'
+import {public_resource} from "../constants/urls"
 
 export default class NewsInformation extends React.PureComponent {
   constructor(props) {
     super(props)
-    this.checkLoading = this.checkLoading.bind(this)
+    this.add = this.add.bind(this)
   }
 
   componentDidMount() {
-    document.addEventListener('scroll', this.checkLoading)
     if (this.props.news.data.length < 20) {
       let value = {
         limit: 20,
@@ -22,21 +22,6 @@ export default class NewsInformation extends React.PureComponent {
     }
   }
 
-  componentWillUnmount() {
-    document.removeEventListener('scroll', this.checkLoading)
-    clearTimeout(this.timeId)
-  }
-
-  checkLoading() {
-    clearTimeout(this.timeId)
-    this.timeId = setTimeout(() => {
-      let bottom_distance = parseInt(getComputedStyle(this.wrap).paddingBottom)
-      let top = this.loading.getBoundingClientRect().top
-      if (bottom_distance + top < window.innerHeight) {
-        this.add()
-      }
-    }, 100)
-  }
 
   add() {
     let datas = this.props.news.data
@@ -53,14 +38,12 @@ export default class NewsInformation extends React.PureComponent {
       }
       this.props.newsActions.fetchPostsIfNeeded(value)
 
-      console.log(value)
     }
   }
 
   render() {
     let data = this.props.news.data
     let head_img = `${public_resource}/news_information_head.jpg`
-    let loading_img = `${public_resource}/loading.png`
     let htmlDom = (
         <div/>
     )
@@ -81,11 +64,7 @@ export default class NewsInformation extends React.PureComponent {
             <div>
               {htmlDom}
             </div>
-            <div className="loading" ref={loading => {
-              this.loading = loading
-            }}>
-              <img src={loading_img}/>
-            </div>
+            <LoadControl isFetching={this.props.news.isFetching} loadFunction={this.add}/>
           </div>
         </div>
     )

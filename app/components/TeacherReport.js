@@ -1,16 +1,16 @@
 import React from 'react'
 import moment from 'moment'
 import TeacherItem from './TeacherReportItem'
+import LoadControl from './LoadControl'
 import {public_resource} from "../constants/urls";
 import './TeacherReport.less'
 export default class TeacherReport extends React.PureComponent{
   constructor(props){
     super(props)
-    this.checkLoading=this.checkLoading.bind(this)
+    this.add=this.add.bind(this)
   }
 
   componentDidMount(){
-    document.addEventListener('scroll',this.checkLoading)
     if(this.props.teacher.data.length<10){
       let value = {
         limit:10,
@@ -19,22 +19,6 @@ export default class TeacherReport extends React.PureComponent{
       }
       this.props.teacherActions.fetchPostsIfNeeded(value)
     }
-  }
-
-  componentWillUnmount(){
-    document.removeEventListener('scroll',this.checkLoading)
-    clearTimeout(this.timeId)
-  }
-
-  checkLoading(){
-    clearTimeout(this.timeId)
-    this.timeId = setTimeout(()=>{
-      let bottom_distance = parseInt(getComputedStyle(this.wrap).paddingBottom)
-      let top = this.loading.getBoundingClientRect().top
-      if(bottom_distance+top<window.innerHeight){
-        this.add()
-      }
-    },100)
   }
 
   add() {
@@ -57,7 +41,6 @@ export default class TeacherReport extends React.PureComponent{
   render(){
     let data = this.props.teacher.data
     let head_img = `${public_resource}/teacher_report_head.jpg`
-    let loading_img = `${public_resource}/loading.png`
     let htmlDom = (
         <div/>
     )
@@ -75,9 +58,7 @@ export default class TeacherReport extends React.PureComponent{
           <div>
             {htmlDom}
           </div>
-          <div className="loading" ref={loading=>{this.loading=loading}}>
-            <img src={loading_img} />
-          </div>
+          <LoadControl isFetching={this.props.teacher.isFetching} loadFunction={this.add}/>
         </div>
     )
   }
