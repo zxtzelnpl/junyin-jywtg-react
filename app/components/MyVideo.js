@@ -4,18 +4,17 @@ import {isAndroid, x5Enter, x5Exit} from "../static/js/tools"
 export default class MyVideo extends React.Component {
   constructor(props) {
     super(props)
-    this.isAndroid = isAndroid()
   }
 
   componentDidMount() {
-    if(this.isAndroid){
+    if(isAndroid){
       this.video.addEventListener('x5videoenterfullscreen', x5Enter)
       this.video.addEventListener('x5videoexitfullscreen', x5Exit)
     }
   }
 
   componentWillUnmount() {
-    if(this.isAndroid){
+    if(isAndroid){
       this.video.removeEventListener('x5videoenterfullscreen', x5Enter)
       this.video.removeEventListener('x5videoexitfullscreen', x5Exit)
     }
@@ -23,7 +22,7 @@ export default class MyVideo extends React.Component {
 
   render() {
     let {src,poster} = this.props
-    if(this.isAndroid){
+    if(isAndroid){
       return(
           <video
               src={src}

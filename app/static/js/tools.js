@@ -25,7 +25,7 @@ export function getCode() {
   window.location.href = urlCode
 }
 
-export function isAndroid(){
+function __isAndroid(){
   let u = navigator.userAgent
   if(u.indexOf('Android') > -1 || u.indexOf('Adr') > -1){
     return true
@@ -34,6 +34,8 @@ export function isAndroid(){
     return false
   }
 }
+
+export const isAndroid = __isAndroid()
 
 export function x5Enter(e){
   let width=window.innerWidth
