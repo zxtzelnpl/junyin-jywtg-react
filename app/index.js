@@ -70,8 +70,6 @@ function getInitialState() {
             })
             .catch((err) => {
               reject({
-                state: 'net',
-                // info: '网络错误，请稍后重试'
                 info:err.message
               })
             })
