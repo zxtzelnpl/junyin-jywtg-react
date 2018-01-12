@@ -5,3 +5,5 @@ build/
 config/
 test/
 *.rar
+others/*.css
+others_sz/*.css
