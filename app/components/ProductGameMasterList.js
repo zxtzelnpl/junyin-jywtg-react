@@ -1,7 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 import './ProductGameMasterList.less'
-import {public_resource} from "../constants/urls";
 import moment from 'moment'
 
 export default class ProductGameMasterList extends React.PureComponent {
