@@ -14,7 +14,7 @@ class Loading extends React.Component{
             <div className="wave1" />
             <div className="wave2" />
           </div>
-          <h4>{this.title}</h4>
+          <h4>君银微投顾</h4>
           <p>Loading...</p>
         </div>
     )

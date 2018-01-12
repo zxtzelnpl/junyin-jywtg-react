@@ -11,6 +11,7 @@ import {getCode, getQuery} from "./static/js/tools";
 
 import App from './App'
 import Loading from './components/Loading'
+import ErrPage from './subpages/ErrPage'
 
 if (typeof __DEV__ !== 'undefined' && __DEV__) {
   console.info('"__DEV__=' + __DEV__ + '",这里是测试环境')
@@ -61,16 +62,17 @@ function getInitialState() {
                 })
               }
               else {
-                let obj = Object.assign(initialState,json)
+                let obj = {...initialState,...json}
                 console.log(obj)
                 myStorage.setItem('user', JSON.stringify(obj))
                 resolve(obj)
               }
             })
-            .catch(() => {
+            .catch((err) => {
               reject({
                 state: 'net',
-                info: '网络错误，请稍后重试'
+                // info: '网络错误，请稍后重试'
+                info:err.message
               })
             })
       }
@@ -89,7 +91,7 @@ getInitialState()
       if (err.state === 'noCode') {
         getCode()
       } else if (err.info) {
-        alert(err.info)
+        render(<ErrPage info={err.info}/>, document.getElementById('root'))
       }
       else {
         alert('未知错误')
