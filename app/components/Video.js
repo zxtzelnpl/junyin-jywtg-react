@@ -1,6 +1,7 @@
 import './Video.less'
 import React from 'react'
 import MyVideo from './MyVideo'
+import LoadControl from './LoadControl'
 import {public_resource} from "../constants/urls";
 import moment from "moment/moment";
 
@@ -40,10 +41,8 @@ class Item extends React.PureComponent {
 
 export default class Video extends React.PureComponent{
   constructor(props){
-    console.log(props)
     super(props)
-    this.head_img = `${public_resource}/exchange_guide_head.jpg`
-    this.checkLoading=this.checkLoading.bind(this)
+    this.add=this.add.bind(this)
     let show = this.props.show||'pmdj'
     this.state={
       show:show
@@ -54,23 +53,6 @@ export default class Video extends React.PureComponent{
     if (this.props.disk.data.length === 0) {
       this.props.diskActions.fetchPostsIfNeeded()
     }
-    document.addEventListener('scroll',this.checkLoading)
-  }
-
-  componentWillUnmount(){
-    document.removeEventListener('scroll',this.checkLoading)
-    clearTimeout(this.timeId)
-  }
-
-  checkLoading(){
-    clearTimeout(this.timeId)
-    this.timeId = setTimeout(()=>{
-      let bottom_distance = parseInt(getComputedStyle(this.wrap).paddingBottom)
-      let top = this.loading.getBoundingClientRect().top
-      if(bottom_distance+top<window.innerHeight){
-        this.add()
-      }
-    },100)
   }
 
   add() {
@@ -100,8 +82,6 @@ export default class Video extends React.PureComponent{
       let title = item.title
       return title.indexOf('盘面点金')>-1||title.indexOf('异动复盘')>-1||title.indexOf('优选早知道')>-1
     })
-    let loading_img = `${public_resource}/loading.png`
-    let loadingShow = this.props.disk.isFetching?'visible':'hidden'
     let htmlDom = data.map(item=>{
       return (<Item key={item.id} {...item} show={this.state.show}/>)
     })
@@ -121,9 +101,7 @@ export default class Video extends React.PureComponent{
           <div className="wrap">
             {htmlDom}
           </div>
-          <div className="loading" ref={loading=>{this.loading=loading}} style={{'visibility':loadingShow}}>
-            <img src={loading_img} />
-          </div>
+          <LoadControl isFetching={this.props.disk.isFetching} loadFunction={this.add}/>
         </div>
     )
 

@@ -1,6 +1,7 @@
 import './SpecialClassList.less'
 import React from 'react'
 import MyVideo from './MyVideo'
+import LoadControl from './LoadControl'
 import {public_resource} from "../constants/urls";
 import moment from "moment/moment";
 
@@ -31,32 +32,13 @@ export default class SpecialClassList extends React.Component {
   constructor(props) {
     super(props)
     this.teacher_picture = this.props.match.params.teacher
-    this.checkLoading=this.checkLoading.bind(this)
+    this.add=this.add.bind(this)
   }
 
   componentDidMount() {
     if (this.props.specialClass.data.length === 0) {
       this.props.specialClassActions.fetchPostsIfNeeded()
     }
-
-    document.addEventListener('scroll',this.checkLoading)
-  }
-
-  componentWillUnmount(){
-    document.removeEventListener('scroll',this.checkLoading)
-    clearTimeout(this.timeId)
-  }
-
-  checkLoading(){
-    clearTimeout(this.timeId)
-    this.timeId = setTimeout(()=>{
-      let bottom_distance = parseInt(getComputedStyle(this.wrap).paddingBottom)
-      let top = this.loading.getBoundingClientRect().top
-      if(bottom_distance+top<window.innerHeight){
-        this.add()
-      }
-    },100)
-
   }
 
   add() {
@@ -67,8 +49,6 @@ export default class SpecialClassList extends React.Component {
     let datas = this.props.specialClass.data.filter(item=>{
       return item.teacher_picture === this.teacher_picture
     })
-    let loading_img = `${public_resource}/loading.png`
-    let loadingShow = this.props.specialClass.isFetching?'visible':'hidden'
     let htmlDom = datas.map(item => {
       return (<Item key={item.id} {...item} />)
     })
@@ -79,9 +59,7 @@ export default class SpecialClassList extends React.Component {
           <div className="wrap">
             {htmlDom}
           </div>
-          <div className="loading" ref={loading=>{this.loading=loading}} style={{'visibility':loadingShow}}>
-            <img src={loading_img} />
-          </div>
+          <LoadControl isFetching={this.props.specialClass.isFetching} loadFunction={this.add}/>
         </div>
     )
 
