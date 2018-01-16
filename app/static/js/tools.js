@@ -35,7 +35,19 @@ function __isAndroid(){
   }
 }
 
+function __isTBS(){
+  let u = navigator.userAgent
+  if(u.indexOf('TBS') > -1 ){
+    return true
+  }
+  else{
+    return false
+  }
+}
+
 export const isAndroid = __isAndroid()
+
+export const isTBS = __isTBS()
 
 export function x5Enter(e){
   let width=window.innerWidth
@@ -72,4 +84,15 @@ export function disk_diff(str){
   else{
     return '未知'
   }
+}
+
+export function androidPlay(e){
+  console.log(e.target.paused)
+  if(e.target.paused){
+    e.target.play()
+  }
+  else{
+    e.target.pause()
+  }
+
 }

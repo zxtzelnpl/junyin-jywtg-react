@@ -11,6 +11,9 @@
     </style>
 </head>
 <body>
+    <div id="micromessage">
+
+    </div>
     <div id="user">
 
     </div>
@@ -19,6 +22,7 @@
 
 </body>
 <script>
+    document.getElementById('micromessage').innerHTML = navigator.userAgent
     let user = document.getElementById('user');
     let btn_userinfo = document.getElementById('btn_user');
 
