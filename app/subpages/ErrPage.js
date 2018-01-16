@@ -10,10 +10,13 @@ export default class ErrPage extends React.PureComponent{
           <h1>哎呀</h1>
           <h2>出错啦！</h2>
           <article>
-            <span>可能原因：</span>
-            <span>
-            {this.props.info}
-          </span>
+            <p>可能原因：</p>
+            <p>
+            {this.props.err.message}
+            </p>
+            <p>
+              {this.props.err.stack?this.props.err.stack:''}
+            </p>
           </article>
         </div>
       </div>

@@ -63,16 +63,11 @@ function getInitialState() {
               }
               else {
                 let obj = {...initialState,...json}
-                console.log(obj)
                 myStorage.setItem('user', JSON.stringify(obj))
                 resolve(obj)
               }
             })
-            .catch((err) => {
-              reject({
-                info:err.message
-              })
-            })
+            .catch(err=>reject(err))
       }
       else {
         reject({
@@ -83,13 +78,17 @@ function getInitialState() {
   })
 }
 
+
+
+
+
 getInitialState()
     .then(user => _render(user))
     .catch(err => {
       if (err.state === 'noCode') {
         getCode()
-      } else if (err.info) {
-        render(<ErrPage info={err.info}/>, document.getElementById('root'))
+      } else if (err.message) {
+        render(<ErrPage err={err}/>, document.getElementById('root'))
       }
       else {
         alert('未知错误')
