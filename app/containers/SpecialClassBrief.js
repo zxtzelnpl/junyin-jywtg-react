@@ -6,6 +6,7 @@ import * as specialClassActionsFromOtherFile from '../actions/specialClass'
 
 function mapStateToProps(state) {
   return {
+    user:state.user,
     specialClass:state.specialClass,
   }
 }

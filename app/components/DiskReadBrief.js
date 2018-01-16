@@ -50,7 +50,7 @@ export default class DiskReadBrief extends React.PureComponent {
     }
     else {
       htmlDom = datas.map(item => {
-        return <DiskItem {...item} key={item.id}/>
+        return <DiskItem {...item} key={item.id} openid={this.props.user.openid}/>
       })
     }
 

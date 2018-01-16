@@ -7,16 +7,18 @@ export default class MyVideo extends React.Component {
   }
 
   componentDidMount() {
+    this.video.addEventListener('play',this.props.onPlay)
+    this.video.addEventListener('x5videoexitfullscreen', x5Exit)
     if(isAndroid){
       this.video.addEventListener('x5videoenterfullscreen', x5Enter)
-      this.video.addEventListener('x5videoexitfullscreen', x5Exit)
     }
   }
 
   componentWillUnmount() {
+    this.video.removeEventListener('play',this.props.onPlay)
+    this.video.removeEventListener('x5videoexitfullscreen', x5Exit)
     if(isAndroid){
       this.video.removeEventListener('x5videoenterfullscreen', x5Enter)
-      this.video.removeEventListener('x5videoexitfullscreen', x5Exit)
     }
   }
 
@@ -30,11 +32,11 @@ export default class MyVideo extends React.Component {
               style={{
                 'objectFit': 'contain'
               }}
+              ref={video=>{this.video=video}}
               plays-inline="true"
               webkit-playsinline="true"
               x5-video-player-type="h5"
               x5-video-player-fullscreen="true"
-              ref={video=>{this.video=video}}
           >您的设备暂不支持此视频</video>
       )
     }
@@ -47,11 +49,11 @@ export default class MyVideo extends React.Component {
               style={{
                 'objectFit': 'contain'
               }}
+              ref={video=>{this.video=video}}
               plays-inline="true"
               webkit-playsinline="true"
               x5-video-player-type="h5"
               x5-video-player-fullscreen="true"
-              ref={video=>{this.video=video}}
           >您的设备暂不支持此视频</video>
       )
     }

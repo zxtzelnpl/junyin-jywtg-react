@@ -2,12 +2,34 @@ import './Video.less'
 import React from 'react'
 import MyVideo from './MyVideo'
 import LoadControl from './LoadControl'
-import {public_resource} from "../constants/urls";
-import moment from "moment/moment";
+import moment from "moment/moment"
+import {disk_diff} from "../static/js/tools"
+import {Video_browse_Record} from "../constants/urls";
 
 class Item extends React.PureComponent {
   constructor(props) {
     super(props)
+  }
+
+  videoPlay(){
+    let {title,openid,timestamp,id} = this.props
+    let type='君银直播'
+    let sort=disk_diff(title)
+    let body = `openid=${openid}&Video_title=${title}&time=${moment.unix(timestamp).format('YYYY-MM-DD HH:mm')}&Video_type=${type}&Video_sort=${sort}&Video_id=${id}`
+    fetch(Video_browse_Record,{
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: body
+    })
+        .then(res=>res.text())
+        .then(text=>{
+          console.log(text)
+        })
+        .catch(err=>{
+          console.log(err)
+        })
   }
 
   render() {
@@ -29,6 +51,7 @@ class Item extends React.PureComponent {
           <MyVideo
               src={video_path}
               poster={cover_path}
+              onPlay={this.videoPlay.bind(this)}
           />
           <div>
             <p>{title}</p>
@@ -83,7 +106,7 @@ export default class Video extends React.PureComponent{
       return title.indexOf('盘面点金')>-1||title.indexOf('异动复盘')>-1||title.indexOf('优选早知道')>-1
     })
     let htmlDom = data.map(item=>{
-      return (<Item key={item.id} {...item} show={this.state.show}/>)
+      return (<Item key={item.id} {...item} show={this.state.show} openid={this.props.user.openid}/>)
     })
     let show = this.state.show
 

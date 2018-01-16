@@ -45,3 +45,31 @@ export function x5Enter(e){
 export function x5Exit(e){
   e.target.style=''
 }
+
+export function teacher_diff(str){
+  switch(str){
+    case '1':
+      return '董齐安'
+    case '2':
+      return '焦晓颖'
+    case '3':
+      return '秦通'
+    default:
+      return '未知'
+  }
+}
+
+export function disk_diff(str){
+  if(str.indexOf('优选早知道')>-1){
+    return '优选早知道'
+  }
+  else if(str.indexOf('异动复盘')>-1){
+    return '异动复盘'
+  }
+  else if(str.indexOf('盘面点金')>-1){
+    return '盘面点金'
+  }
+  else{
+    return '未知'
+  }
+}

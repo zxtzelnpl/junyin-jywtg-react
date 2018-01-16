@@ -1,29 +1,8 @@
 import './SpecialClassBrief.less'
 import React from 'react'
 import {Link} from 'react-router-dom'
-import MyVideo from './MyVideo'
 import {public_resource} from "../constants/urls"
-
-
-class Item extends React.PureComponent{
-  constructor(props){
-    super(props)
-  }
-
-  render(){
-    let {cover_picture,video_path,title} = this.props
-    return (
-        <div className="SpecialClassBriefItem">
-          <MyVideo
-              src={video_path}
-              poster={cover_picture}
-          />
-          <p>{title}</p>
-        </div>
-    )
-  }
-}
-
+import Item from './SpecialClassItem1'
 
 export default class SpecialClassBrief extends React.Component{
   constructor(props){
@@ -44,7 +23,7 @@ export default class SpecialClassBrief extends React.Component{
     let data = this.props.specialClass.data.slice(0,4)
 
     let htmlDom = data.map(item=>{
-      return (<Item key={item.id} {...item} />)
+      return (<Item key={item.id} {...item} openid={this.props.user.openid}/>)
     })
 
     let img_title = `${public_resource}/specialClass.jpg`

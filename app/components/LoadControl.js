@@ -31,7 +31,6 @@ export default class LoadControl extends React.Component {
   }
 
   render () {
-    console.log(this.props.isFetching)
     let loading_img = `${public_resource}/loading.png`
     let visible = this.props.isFetching ? 'visible' : 'hidden'
     return (

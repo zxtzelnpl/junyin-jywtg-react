@@ -15,8 +15,10 @@ import ErrPage from './subpages/ErrPage'
 
 if (typeof __DEV__ !== 'undefined' && __DEV__) {
   console.info('"__DEV__=' + __DEV__ + '",这里是测试环境')
-  myStorage.clear('user')
-  myStorage.setItem('user', '{"isFetching":false,"receivedAt":"1515985807","phone":"15921433951","openid":"oM9bcwAKuGCOSzzTF_BnWE56VUcc","img":"","check":true,"nick_name":"Aaron Z","province":"内蒙古","country":"中国","city":"兴安","sex":"1","headimgurl":"http://wx.qlogo.cn/mmopen/xw5Nubia2CICfhTwnyUTSicTNsNGODvjARe4BedK1u3OGnJaHiaz4EwGOYLEicjrIraglLbLMXETt8EXxdJVSogicyLb6BL31yvA7/0","channel":"其他","erro":"OK","time":"2018/1/31 13:59:00"}')
+  // myStorage.clear('user')
+  // myStorage.setItem('user', '{"isFetching":false,"receivedAt":"1515985807","phone":"15921433951","openid":"oM9bcwAKuGCOSzzTF_BnWE56VUcc","img":"","check":true,"nick_name":"Aaron Z","province":"内蒙古","country":"中国","city":"兴安","sex":"1","headimgurl":"http://wx.qlogo.cn/mmopen/xw5Nubia2CICfhTwnyUTSicTNsNGODvjARe4BedK1u3OGnJaHiaz4EwGOYLEicjrIraglLbLMXETt8EXxdJVSogicyLb6BL31yvA7/0","channel":"其他","erro":"OK","time":"2018/1/31 13:59:00"}')
+
+  // myStorage.setItem('user', `{"isFetching":false,"receivedAt":"1515985807","phone":"15921433951","openid":"${String(Math.random()).slice(2)}","img":"","check":true,"nick_name":"Aaron Z","province":"内蒙古","country":"中国","city":"兴安","sex":"1","headimgurl":"http://wx.qlogo.cn/mmopen/xw5Nubia2CICfhTwnyUTSicTNsNGODvjARe4BedK1u3OGnJaHiaz4EwGOYLEicjrIraglLbLMXETt8EXxdJVSogicyLb6BL31yvA7/0","channel":"其他","erro":"OK","time":"2018/1/31 13:59:00"}`)
 }
 
 render(<Loading/>, document.getElementById('root'))

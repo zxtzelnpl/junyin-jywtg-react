@@ -7,6 +7,7 @@ import * as diskActionsFromOtherFile from '../actions/disk'
 function mapStateToProps(state) {
   return {
     disk:state.disk,
+    user:state.user
   }
 }
 

@@ -1,34 +1,15 @@
 import './SpecialClass.less'
 import React from 'react'
 import {Link} from 'react-router-dom'
-import MyVideo from './MyVideo'
+import Item from './SpecialClassItem1'
 import {public_resource} from "../constants/urls"
 import {teachers} from '../constants/teachers'
-
-class Item extends React.PureComponent{
-  constructor(props){
-    super(props)
-  }
-
-  render(){
-    let {cover_picture,video_path,title} = this.props
-    return (
-        <div className="SpecialClassBriefItem">
-          <MyVideo
-              src={video_path}
-              poster={cover_picture}
-          />
-          <p>{title}</p>
-        </div>
-    )
-  }
-}
 
 class SpecialClassBox extends React.Component {
   render() {
     let data = this.props.data.slice(0,2)
     let teacherDom = data.map(item=>{
-      return <Item key={item.id} {...item}/>
+      return <Item key={item.id} {...item} openid={this.props.openid} />
     })
 
     let img_detail = `${public_resource}/detail.jpg`
@@ -47,7 +28,6 @@ class SpecialClassBox extends React.Component {
 export default class SpecialClass extends React.Component {
   constructor(props) {
     super(props)
-    this.head_img = `${public_resource}/special_class_head.jpg`
   }
 
   componentDidMount() {
@@ -70,7 +50,7 @@ export default class SpecialClass extends React.Component {
 
     let htmlDom = _teachers.map(teacher=>{
       if(teacher.data.length>0){
-        return (<SpecialClassBox key={teacher.teacher_picture} {...teacher}/>)
+        return (<SpecialClassBox key={teacher.teacher_picture} {...teacher} openid={this.props.user.openid}/>)
       }
     })
 
