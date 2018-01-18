@@ -58,7 +58,7 @@ function getInitialState() {
               if (json.erro !== 'OK') {
                 reject({
                   state: 'noAttention',
-                  info: '您还没有关注公众号《君银微投顾》，请先关注后查看页面'
+                  message: '您还没有关注公众号《君银微投顾》，请先关注后查看页面'
                 })
               }
               else {
@@ -78,10 +78,6 @@ function getInitialState() {
   })
 }
 
-
-
-
-
 getInitialState()
     .then(user => _render(user))
     .catch(err => {
@@ -90,7 +86,7 @@ getInitialState()
       } else if (err.message) {
         render(<ErrPage err={err}/>, document.getElementById('root'))
       }
-      else {
-        alert('未知错误')
+      else{
+        alert(String(err))
       }
     })
