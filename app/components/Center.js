@@ -15,9 +15,7 @@ export default class Center extends React.PureComponent {
       return (
           <Login
               user={this.props.user}
-              button={this.props.button}
               userActions={this.props.userActions}
-              buttonActions = {this.props.buttonActions}
           />
       )
     }

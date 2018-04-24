@@ -8,22 +8,20 @@ export default class Login extends React.PureComponent {
     super(props)
     this.state = {
       phone: this.props.user.phone,
-      secret: '',
-      openid:this.props.user.openid
+      openid:this.props.user.openid,
+      secret: ''
     }
-    this.height=window.innerHeight-20
   }
 
-
-  phoneChange() {
-    let value = trim(this.phone.value)
+  phoneChange(e) {
+    let value = trim(e.target.value);
     this.setState({
       phone: value
     })
   }
 
-  secretChange() {
-    let value = trim(this.secret.value)
+  secretChange(e) {
+    let value = trim(e.target.value);
     this.setState({
       secret: value
     })
@@ -56,9 +54,6 @@ export default class Login extends React.PureComponent {
                   type="number"
                   placeholder="请输入手机号码"
                   value={this.state.phone}
-                  ref={input => {
-                    this.phone = input
-                  }}
                   onChange={this.phoneChange.bind(this)}
               />
             </div>
@@ -67,9 +62,6 @@ export default class Login extends React.PureComponent {
                   type="password"
                   placeholder="请输入密码"
                   value={this.state.secret}
-                  ref={input => {
-                    this.secret = input
-                  }}
                   onChange={this.secretChange.bind(this)}
               />
             </div>
