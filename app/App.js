@@ -14,8 +14,6 @@ import VideosPage from './subpages/VideosPage'
 import Footer from './containers/Footer'
 import ProductGameMaster from './containers/ProductGameMaster'
 import ProductGameMasterList from './containers/ProductGameMasterList'
-import Video from './containers/Video'
-import SpecialClass from './containers/SpecialClass'
 import SpecialClassList from './containers/SpecialClassList'
 // import Test from './subpages/Test'
 

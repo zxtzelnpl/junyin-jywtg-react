@@ -9,9 +9,6 @@ export default class VideosPage extends React.Component{
     this.state={
       show:props.location.state||'pmdj'
     }
-    this.img={
-
-    }
   }
 
   onClick(e){

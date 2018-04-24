@@ -51,7 +51,7 @@ class Item extends React.PureComponent {
 }
 
 
-export default class SpecialClassList extends React.Component {
+export default class SpecialClassList extends React.PureComponent {
   constructor(props) {
     super(props)
     this.teacher_picture = this.props.match.params.teacher
@@ -64,7 +64,7 @@ export default class SpecialClassList extends React.Component {
     }
   }
 
-  add() {
+  load() {
     this.props.specialClassActions.fetchPostsIfNeeded()
   }
 
@@ -82,7 +82,7 @@ export default class SpecialClassList extends React.Component {
           <div className="wrap">
             {htmlDom}
           </div>
-          <LoadControl isFetching={this.props.specialClass.isFetching} loadFunction={this.add}/>
+          <LoadControl isFetching={this.props.specialClass.isFetching} loadFunction={this.load}/>
         </div>
     )
 
