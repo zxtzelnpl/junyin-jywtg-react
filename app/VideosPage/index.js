@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './Header'
+import Header from './components/Header'
 import Video from './containers/Videos'
 import SpecialClass from '../containers/SpecialClass'
 import * as lables from './const'

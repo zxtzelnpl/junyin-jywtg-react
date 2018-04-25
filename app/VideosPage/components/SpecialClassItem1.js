@@ -1,10 +1,8 @@
-'use strict'
-
 import './SpecialClassItem1.less'
 import React from "react";
-import MyVideo from './MyVideo'
-import {teacher_diff} from "../static/js/tools";
-import {Video_browse_Record} from "../constants/urls";
+import MyVideo from '../../components/MyVideo'
+import {teacher_diff} from "../../static/js/tools";
+import {Video_browse_Record} from "../../constants/urls";
 import moment from "moment/moment";
 
 export default class Item extends React.PureComponent{

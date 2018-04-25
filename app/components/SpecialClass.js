@@ -1,7 +1,7 @@
 import './SpecialClass.less'
 import React from 'react'
 import {Link} from 'react-router-dom'
-import Item from './SpecialClassItem1'
+import Item from '../VideosPage/components/SpecialClassItem1'
 import {public_resource} from "../constants/urls"
 import {teachers} from '../constants/teachers'
 

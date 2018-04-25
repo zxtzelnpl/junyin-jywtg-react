@@ -1,6 +1,6 @@
 import './Header.less'
 import React from 'react'
-import * as labels from './const'
+import * as labels from '../const'
 
 class Header extends React.PureComponent{
   constructor(props){

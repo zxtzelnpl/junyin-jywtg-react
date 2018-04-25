@@ -1,9 +1,9 @@
 import './VideoBrief.less'
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {public_resource} from "../constants/urls";
+import {public_resource} from "../../constants/urls";
 import moment from "moment/moment";
-import * as labels from './const'
+import * as labels from '../const'
 
 export default class VideoBrief extends React.PureComponent {
   constructor(props) {

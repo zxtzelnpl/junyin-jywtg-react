@@ -1,7 +1,7 @@
 import './SpecialClassBrief.less'
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {public_resource} from "../constants/urls"
+import {public_resource} from "../../constants/urls"
 import Item from './SpecialClassItem1'
 
 export default class SpecialClassBrief extends React.Component{
