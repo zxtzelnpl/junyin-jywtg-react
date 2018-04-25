@@ -3,21 +3,19 @@ import User from './User'
 import Login from './Login'
 import moment from "moment/moment";
 
-export default class Center extends React.PureComponent {
-  render(){
-    let {check,receivedAt} = this.props.user
-    if(check&&moment().isBefore(moment.unix(receivedAt).add(7,'days'))){
-      return (
-          <User user={this.props.user} userActions={this.props.userActions}/>
-      )
-    }
-    else{
-      return (
-          <Login
-              user={this.props.user}
-              userActions={this.props.userActions}
-          />
-      )
-    }
+export default function Center ({user,userActions}){
+  let {check,receivedAt} = user
+  if(check&&moment().isBefore(moment.unix(receivedAt).add(7,'days'))){
+    return (
+      <User user={user} userActions={userActions}/>
+    )
+  }
+  else{
+    return (
+      <Login
+        user={user}
+        userActions={userActions}
+      />
+    )
   }
 }

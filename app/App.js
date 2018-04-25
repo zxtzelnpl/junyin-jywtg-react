@@ -15,7 +15,6 @@ import Footer from './containers/Footer'
 import ProductGameMaster from './containers/ProductGameMaster'
 import ProductGameMasterList from './containers/ProductGameMasterList'
 import SpecialClassList from './containers/SpecialClassList'
-// import Test from './subpages/Test'
 
 import './static/css/app.less'
 
