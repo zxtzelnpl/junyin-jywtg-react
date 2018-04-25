@@ -55,7 +55,7 @@ export default class SpecialClassList extends React.PureComponent {
   constructor(props) {
     super(props)
     this.teacher_picture = this.props.match.params.teacher
-    this.add=this.add.bind(this)
+    this.load=this.load.bind(this)
   }
 
   componentDidMount() {
