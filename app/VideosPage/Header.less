@@ -1,0 +1,25 @@
+.VideosPageTabHead{
+  display:flex;
+  align-items: stretch;
+  justify-content: center;
+
+  box-sizing: border-box;
+  height:1rem;
+  background:#fff;
+  >li{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    width:30%;
+    font-size:.4rem;
+    color:#fff;
+    &.normal{
+      background:rgba(251,167,121,.5)
+    }
+    &.active{
+      font-weight:bold;
+      background:rgba(251,125,79,1)
+    }
+  }
+}

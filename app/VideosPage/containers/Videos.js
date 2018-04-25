@@ -1,22 +1,23 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import VideoBrief from '../components/VideoBrief'
-import * as exchangeGuideActionsFromOtherFile from '../actions/exchangeGuide'
+import Videos from '../components/Videos'
+import * as diskActions from '../../actions/disk'
 
 function mapStateToProps(state) {
   return {
-    exchangeGuide:state.exchangeGuide,
+    disk:state.disk,
+    user:state.user
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    exchangeGuideActions:bindActionCreators(exchangeGuideActionsFromOtherFile,dispatch),
+    diskActions:bindActionCreators(diskActions,dispatch),
   }
 }
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(VideoBrief)
+)(Videos)

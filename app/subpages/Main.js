@@ -7,9 +7,8 @@ import DiskReadBrief from '../containers/DiskReadBrief'
 import NewsInformationBreif from '../containers/NewsInformationBreif'
 import TeacherReportBreif from '../containers/TeacherReportBreif'
 import ProductGameMasterBrief from '../containers/ProductGameMasterBrief'
-import VideoBrief from '../containers/VideoBrief'
+import VideoBrief from '../VideosPage/VideoBrief'  //直接木偶组件
 import SpecialClassBrief from '../containers/SpecialClassBrief'
-import moment from "moment/moment";
 
 export default class Main extends React.Component{
   constructor(props){

@@ -3,6 +3,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {public_resource} from "../constants/urls";
 import moment from "moment/moment";
+import * as labels from './const'
 
 export default class VideoBrief extends React.PureComponent {
   constructor(props) {
@@ -18,17 +19,17 @@ export default class VideoBrief extends React.PureComponent {
       detail: `${public_resource}/detail.jpg`
     }
     this.url={
-      pmdj:{
+      PAN_MIAN_DIAN_JIN:{
         pathname:'/VideosPage',
-        state:'pmdj'
+        state:labels.PAN_MIAN_DIAN_JIN
       },
-      ydfp:{
+      YI_DONG_FU_PAN:{
         pathname:'/VideosPage',
-        state:'ydfp'
+        state:labels.YI_DONG_FU_PAN
       },
-      yxzzd:{
+      YOU_XUAN_ZAO_ZHI_DAO:{
         pathname:'/VideosPage',
-        state:'yxzzd'
+        state:labels.YOU_XUAN_ZAO_ZHI_DAO
       }
     }
   }
@@ -56,24 +57,24 @@ export default class VideoBrief extends React.PureComponent {
         <div className="VideoBrief">
           <p className="title">
             <span><img src={title}/>君银直播</span>
-            <Link to={{pathname:'/VideosPage',state:'pmdj'}}><img src={detail} alt=""/></Link>
+            <Link to={{pathname:'/VideosPage',state:labels.PAN_MIAN_DIAN_JIN}}><img src={detail} alt=""/></Link>
           </p>
           <div className="wrap">
             <ul>
               <li className={mark==='pmdj'?'big':''}>
-                <Link to={this.url.pmdj}>
+                <Link to={this.url.PAN_MIAN_DIAN_JIN}>
                   <img src={mark==='pmdj'?pmdj:pmdj_sm}/>
                   <p>10:00<span>-</span>10:30</p>
                 </Link>
               </li>
               <li className={mark==='ydfp'?'big':''}>
-                <Link to={this.url.ydfp}>
+                <Link to={this.url.YI_DONG_FU_PAN}>
                   <img src={mark==='ydfp'?ydfp:ydfp_sm}/>
                   <p>14:00<span>-</span>14:30</p>
                 </Link>
               </li>
               <li className={mark==='yxzzd'?'big':''}>
-                <Link to={this.url.yxzzd}>
+                <Link to={this.url.YOU_XUAN_ZAO_ZHI_DAO}>
                   <img src={mark==='yxzzd'?yxzzd:yxzzd_sm}/>
                   <p>15:00<span>-</span>15:30</p>
                 </Link>

@@ -31,10 +31,13 @@ export default class MyVideo extends React.Component {
   }
 
   render () {
-    let {src, poster} = this.props
+    let {src, poster,id,timestamp,title} = this.props
     if (isAndroid) {
       if (isTBS) {
         return <video
+            data-video-id={id}
+            data-video-timestamp={timestamp}
+            data-video-title={title}
             src={src}
             poster={poster}
             ref={video => {
@@ -52,6 +55,9 @@ export default class MyVideo extends React.Component {
       }
       else {
         return <video
+            data-video-id={id}
+            data-video-timestamp={timestamp}
+            data-video-title={title}
             src={src}
             poster={poster}
             controls={"false"}
@@ -65,6 +71,9 @@ export default class MyVideo extends React.Component {
     }
     else {
       return <video
+          data-video-id={id}
+          data-video-timestamp={timestamp}
+          data-video-title={title}
           src={src}
           poster={poster}
           controls={"false"}
