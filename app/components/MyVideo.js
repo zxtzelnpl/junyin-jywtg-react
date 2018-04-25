@@ -40,6 +40,7 @@ export default class MyVideo extends React.Component {
             ref={video => {
               this.video = video
             }}
+            controls={"false"}
             style={{
               'objectFit': 'contain'
             }}
@@ -53,7 +54,7 @@ export default class MyVideo extends React.Component {
         return <video
             src={src}
             poster={poster}
-            controls="false"
+            controls={"false"}
             ref={video => {
               this.video = video
             }}
@@ -66,7 +67,7 @@ export default class MyVideo extends React.Component {
       return <video
           src={src}
           poster={poster}
-          controls="false"
+          controls={"false"}
           ref={video => {
             this.video = video
           }}
