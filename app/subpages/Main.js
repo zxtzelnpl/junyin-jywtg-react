@@ -3,7 +3,7 @@ import './Main.less'
 import {public_resource} from "../constants/urls"
 // StockIndex可能会有溢出
 import StockIndex from '../components/StockIndex'
-import DiskReadBrief from '../containers/DiskReadBrief'
+import DiskReadBrief from '../DiskRead/containers/DiskReadBrief'
 import NewsInformationBreif from '../containers/NewsInformationBreif'
 import TeacherReportBreif from '../containers/TeacherReportBreif'
 import ProductGameMasterBrief from '../containers/ProductGameMasterBrief'
