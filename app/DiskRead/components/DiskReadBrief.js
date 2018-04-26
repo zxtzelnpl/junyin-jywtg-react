@@ -51,9 +51,9 @@ export default class DiskReadBrief extends React.PureComponent {
 
   render() {
     let htmlDom
-    let datas = this.props.disk.data
-    let disk_img = `${public_resource}/disk.jpg`
-    let detail_img = `${public_resource}/detail.jpg`
+    let datas = this.props.disk.data.slice(0,2);
+    let disk_img = `${public_resource}/disk.jpg`;
+    let detail_img = `${public_resource}/detail.jpg`;
     if (datas.length === 0) {
       htmlDom = (<div/>)
     }
