@@ -1,14 +1,14 @@
-import './Videos.less';
+import './LiveVideos.less';
 import React from 'react';
 import LoadControl from '../../components/LoadControl';
-import Item from './VideoItem'
+import Item from './LiveVideoItem'
 import NoData from '../components/NoData'
 import * as labels from '../const';
 import {Video_browse_Record} from "../../constants/urls";
 import {disk_diff} from "../../static/js/tools";
 import moment from "moment/moment";
 
-export default class Videos extends React.PureComponent{
+export default class LiveVideos extends React.PureComponent{
   constructor(props){
     super(props)
     this.load=this.load.bind(this);

@@ -1,4 +1,4 @@
-import './VideoBrief.less'
+import './LiveVideoBrief.less'
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {public_resource} from "../../constants/urls";

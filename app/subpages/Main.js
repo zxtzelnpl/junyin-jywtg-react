@@ -7,8 +7,8 @@ import DiskReadBrief from '../containers/DiskReadBrief'
 import NewsInformationBreif from '../containers/NewsInformationBreif'
 import TeacherReportBreif from '../containers/TeacherReportBreif'
 import ProductGameMasterBrief from '../containers/ProductGameMasterBrief'
-import VideoBrief from '../VideosPage/components/VideoBrief'  //直接木偶组件
-import SpecialClassBrief from '../VideosPage/containers/SpecialClassBrief'
+import LiveVideoBrief from '../AllVideosPage/components/LiveVideoBrief'  //直接木偶组件
+import SpecialClassBrief from '../AllVideosPage/containers/SpecialClassBrief'
 
 export default class Main extends React.Component{
   constructor(props){
@@ -36,7 +36,7 @@ export default class Main extends React.Component{
           </div>
           <StockIndex />
           <div className="blank_20" />
-          <VideoBrief />
+          <LiveVideoBrief />
           <div className="blank_20" />
           <DiskReadBrief />
           <div className="blank_20" />

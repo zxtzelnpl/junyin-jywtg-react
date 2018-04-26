@@ -2,7 +2,7 @@ import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import SpecialClassList from '../components/SpecialClassList'
-import * as specialClassActionsFromOtherFile from '../actions/specialClass'
+import * as specialClassActionsFromOtherFile from '../../actions/specialClass'
 
 function mapStateToProps(state) {
   return {

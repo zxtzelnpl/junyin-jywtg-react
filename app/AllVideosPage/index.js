@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './components/Header'
-import Video from './containers/Videos'
-import SpecialClass from '../containers/SpecialClass'
+import LiveVideos from './containers/LiveVideos'
+import SpecialClass from './containers/SpecialClass'
 import * as lables from './const'
 
 export default class VideosPage extends React.PureComponent{
@@ -54,7 +54,7 @@ export default class VideosPage extends React.PureComponent{
       case lables.PAN_MIAN_DIAN_JIN:
       case lables.YI_DONG_FU_PAN:
       case lables.YOU_XUAN_ZAO_ZHI_DAO:
-        return <Video
+        return <LiveVideos
           tab={this.state.tab}
           onSubHeadToggle={this.onSubHeadToggle}
         />

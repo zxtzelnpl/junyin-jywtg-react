@@ -10,11 +10,11 @@ import Login from './containers/Login'
 import Center from './containers/Center'
 import Main from './subpages/Main'
 import NewsPage from './subpages/NewsPage'
-import VideosPage from './VideosPage'
+import AllVideosPage from './AllVideosPage'
 import Footer from './containers/Footer'
 import ProductGameMaster from './containers/ProductGameMaster'
 import ProductGameMasterList from './containers/ProductGameMasterList'
-import SpecialClassList from './containers/SpecialClassList'
+import SpecialClassList from './AllVideosPage/containers/SpecialClassList'
 
 import './static/css/app.less'
 
@@ -34,7 +34,7 @@ const App = () => {
         <Route path="/Center" component={Center}/>
         <Route path="/ProductGameMaster" component={ProductGameMaster}/>
         <Route path="/ProductGameMasterList" component={ProductGameMasterList}/>
-        <Route path="/VideosPage" component={VideosPage}/>
+        <Route path="/VideosPage" component={AllVideosPage}/>
         <Route path="/SpecialClassList/:teacher" component={SpecialClassList}/>
         <Footer/>
       </div>

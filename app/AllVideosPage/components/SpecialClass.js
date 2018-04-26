@@ -1,28 +1,7 @@
 import './SpecialClass.less'
 import React from 'react'
-import {Link} from 'react-router-dom'
-import Item from '../VideosPage/components/SpecialClassItem1'
-import {public_resource} from "../constants/urls"
-import {teachers} from '../constants/teachers'
-
-function SpecialClassBox({data,openid,teacher_picture,name}){
-
-  let _data = data.slice(0,2)
-  let teacherDom = _data.map(item=>{
-    return <Item key={item.id} {...item} openid={openid} />
-  })
-
-  let img_detail = `${public_resource}/detail.jpg`
-  let url = `/SpecialClassList/${teacher_picture}`
-  return (
-    <div className="SpecialClassBox">
-      <p className="title">{name} <Link to={url}><img src={img_detail} alt=""/></Link></p>
-      <div className="SpecialClassBoxWrap">
-        {teacherDom}
-      </div>
-    </div>
-  )
-}
+import SpecialClassBox from './SpecialClassBox'
+import {teachers} from '../../constants/teachers'
 
 export default class SpecialClass extends React.PureComponent {
   constructor(props) {

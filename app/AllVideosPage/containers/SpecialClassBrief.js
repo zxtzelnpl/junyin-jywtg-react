@@ -1,13 +1,14 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import SpecialClass from '../components/SpecialClass'
-import * as specialClassActionsFromOtherFile from '../actions/specialClass'
+import SpecialClassBrief from '../components/SpecialClassBrief'
+import * as specialClassActionsFromOtherFile from '../../actions/specialClass'
 
 function mapStateToProps(state) {
   return {
     user:state.user,
-    specialClass:state.specialClass,
+    data:state.specialClass.data,
+    isFetching:state.specialClass.isFetching
   }
 }
 
@@ -20,4 +21,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(SpecialClass)
+)(SpecialClassBrief)

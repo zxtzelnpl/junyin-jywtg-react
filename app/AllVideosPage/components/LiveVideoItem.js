@@ -3,7 +3,7 @@ import MyVideo from '../../components/MyVideo';
 import moment from "moment/moment";
 import * as labels from '../const';
 
-export default class Item extends React.PureComponent {
+export default class LiveVideoItem extends React.PureComponent {
   constructor(props) {
     super(props)
   }
