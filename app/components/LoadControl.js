@@ -11,12 +11,14 @@ export default class LoadControl extends React.Component {
   }
 
   componentDidMount () {
-    window.addEventListener('scroll', this.check)
+    // window.addEventListener('scroll', this.check)
+    document.addEventListener('touchmove', this.check)
   }
 
   componentWillUnmount () {
     clearTimeout(this.timeId)
-    window.removeEventListener('scroll', this.check)
+    // window.removeEventListener('scroll', this.check)
+    document.removeEventListener('touchmove', this.check)
   }
 
   check () {
