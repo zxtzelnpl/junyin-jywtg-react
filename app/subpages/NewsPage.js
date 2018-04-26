@@ -2,8 +2,6 @@ import './NewsPage.less'
 import React from 'react'
 import NewsInformation from '../containers/NewsInformation'
 import TeacherReport from '../containers/TeacherReport'
-import {public_resource} from "../constants/urls";
-import moment from "moment/moment";
 
 export default class NewsPage extends React.Component{
   constructor(props){

@@ -1,7 +1,7 @@
 import React from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import DiskRead from '../components/DiskRead'
+import DiskRead from './components/DiskRead'
 import * as diskActionsFromOtherFile from '../actions/disk'
 
 function mapStateToProps (state) {
@@ -18,6 +18,6 @@ function mapDispatchToProps (dispatch) {
 }
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(DiskRead)

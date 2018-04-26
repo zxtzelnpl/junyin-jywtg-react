@@ -1,6 +1,6 @@
 import React from 'react'
 import {Route, Redirect, Link} from 'react-router-dom'
-import DiskRead from './containers/DiskRead'
+import DiskRead from './DiskRead'
 import NewsInformation from './containers/NewsInformation'
 import NewsInformationDetail from './containers/NewsInformationDetail'
 import TeacherReport from './containers/TeacherReport'
