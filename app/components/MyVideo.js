@@ -9,25 +9,25 @@ export default class MyVideo extends React.Component {
   componentDidMount () {
     if (isAndroid) {
       if (isTBS) {
-        this.video.addEventListener('x5videoexitfullscreen', x5Exit)
-        this.video.addEventListener('x5videoenterfullscreen', x5Enter)
+        this.video.addEventListener('x5videoexitfullscreen', x5Exit)        //x5兼容
+        this.video.addEventListener('x5videoenterfullscreen', x5Enter)        //x5兼容
       } else {
         // this.video.addEventListener('click', androidPlay)
       }
     }
-    this.video.addEventListener('play', this.props.onPlay)
+    this.video.addEventListener('play', this.props.onPlay)//播放数据记录
   }
 
   componentWillUnmount () {
     if (isAndroid) {
       if (isTBS) {
-        this.video.removeEventListener('x5videoexitfullscreen', x5Exit)
-        this.video.removeEventListener('x5videoenterfullscreen', x5Enter)
+        this.video.removeEventListener('x5videoexitfullscreen', x5Exit)       //x5兼容
+        this.video.removeEventListener('x5videoenterfullscreen', x5Enter)       //x5兼容
       } else {
         // this.video.removeEventListener('click', androidPlay)
       }
     }
-    this.video.removeEventListener('play', this.props.onPlay)
+    this.video.removeEventListener('play', this.props.onPlay)//播放数据记录
   }
 
   render () {
